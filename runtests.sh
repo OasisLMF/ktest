@@ -13,7 +13,7 @@ init()
 		fi
 	else echo 'Running Linux test'
 	fi
-	
+	echo $CTRL
 	if [ ! -d examples ]; then
 		tar -xzf examples.tar.gz
 	fi
@@ -91,6 +91,7 @@ installertest()
 	  echo "Installer test passed.\n"
 	# exit 0
 	fi
+	rm *
 	cd ../..
 	# echo `pwd`
 }
@@ -99,7 +100,6 @@ ftest()
 {
 	cd ftest
 	mkdir -p testout
-	CTRL=wctrl
 	
 	cd ../examples
 
