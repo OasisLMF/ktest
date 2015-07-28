@@ -2,8 +2,18 @@
 
 init()
 {
-	PATH=/cygdrive/c/Oasis/bin:$PATH
-	CTRL=wctrl
+	CTRL=ctrl
+	echo $OSTYPE
+	if [[ "$OSTYPE" == "cygwin" ]]; then
+		if [ -f /cygdrive/c/Oasis/bin/eve ]; then
+		echo 'Running Windows test'
+		PATH=/cygdrive/c/Oasis/bin:$PATH
+		CTRL=wctrl
+		else echo 'Running Cygwin test'
+		fi
+	else echo 'Running Linux test'
+	fi
+	
 	if [ ! -d examples ]; then
 		tar -xzf examples.tar.gz
 	fi
