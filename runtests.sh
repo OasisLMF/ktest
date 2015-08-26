@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 init()
 {
@@ -55,7 +55,7 @@ installertest()
 	# stdout to csv
 	cdftocsv < ../installertest/testout/getmodelout1_1.bin > ../installertest/testout/getmodelout1_1.csv
 
-	gultocsv < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
+	gultocsv -S < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
 
 	fmtocsv < ../installertest/testout/fmcalcout1_1.bin > ../installertest/testout/fmcalcout1_1.csv
 
