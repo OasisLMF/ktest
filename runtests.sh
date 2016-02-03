@@ -126,7 +126,7 @@ ftest()
 	cp ../ftest/fm3/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm3/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm3/fm_profile.bin fm/fm_profile.bin
-	cp ../ftest/data/guls.bin .
+	cp ../ftest/fm3/guls.bin .
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm3.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta3.csv
 	# Run fm4
@@ -134,6 +134,7 @@ ftest()
 	cp ../ftest/fm4/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm4/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm4/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm4/guls.bin
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm4.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta4.csv
 	# Run fm5
@@ -141,6 +142,7 @@ ftest()
 	cp ../ftest/fm5/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm5/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm5/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm5/guls.bin
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm5.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta5.csv
 	# Run fm6
@@ -148,6 +150,7 @@ ftest()
 	cp ../ftest/fm6/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm6/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm6/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm6/guls.bin
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm6.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta6.csv
 	# Run fm7
@@ -155,6 +158,7 @@ ftest()
 	cp ../ftest/fm7/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm7/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm7/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm7/guls.bin
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm7.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta7.csv
 	# Restore examples folder to initial state
@@ -162,7 +166,7 @@ ftest()
 	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
-	#rm guls.bin
+	rm guls.bin
 
 	cd ../ftest/testout
 	md5sum -c ../$CTRL.md5
