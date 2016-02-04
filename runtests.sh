@@ -4,15 +4,15 @@ init()
 {
 	CTRL=ctrl
 	echo $OSTYPE
-	if [[ "$OSTYPE" == "cygwin" ]]; then
-		if [ -f /cygdrive/c/Oasis/bin/eve ]; then
-		echo 'Running Windows test'
-		PATH=/cygdrive/c/Oasis/bin:$PATH
-		CTRL=wctrl
-		else echo 'Running Cygwin test'
-		fi
-	else echo 'Running Linux test'
-	fi
+	#if [[ "$OSTYPE" == "cygwin" ]]; then
+	#	if [ -f /cygdrive/c/Oasis/bin/eve ]; then
+	#	echo 'Running Windows test'
+	#	PATH=/cygdrive/c/Oasis/bin:$PATH
+	#	CTRL=wctrl
+	#	else echo 'Running Cygwin test'
+	#	fi
+	#else echo 'Running Linux test'
+	#fi
 	echo $CTRL
 	if [ ! -d examples ]; then
 		tar -xzf examples.tar.gz
@@ -57,7 +57,7 @@ installertest()
 	# stdout to csv
 	cdftocsv < ../installertest/testout/getmodelout1_1.bin > ../installertest/testout/getmodelout1_1.csv
 
-	gultocsv -S < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
+	gultocsv -s < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
 
 	fmtocsv < ../installertest/testout/fmcalcout1_1.bin > ../installertest/testout/fmcalcout1_1.csv
 	fmtocsv < ../installertest/testout/fmcalcoutbeta1_1.bin > ../installertest/testout/fmcalcoutbeta1_1.csv
@@ -108,6 +108,15 @@ ftest()
 
 	eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -r -R > ../ftest/testout/gul_c1.bin
 	eve 2 1 1 | getmodel 2 | gulcalc -C2 -S100 -r -R > ../ftest/testout/gul_c2.bin
+	# Run fm0
+	cp ../ftest/fm0/fm_data.bin fm/fm_data.bin
+	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
+	fmcalc < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fm0_c1.csv
+	fmcalc < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fm0_c2.csv
+	fmcalc_beta < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fmbeta0_c1.csv
+	fmcalc_beta < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fmbeta0_c2.csv
 	# Run fm1
 	cp ../ftest/fm1/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm1/fm_programme.bin fm/fm_programme.bin
@@ -134,7 +143,7 @@ ftest()
 	cp ../ftest/fm4/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm4/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm4/fm_profile.bin fm/fm_profile.bin
-	cp ../ftest/fm4/guls.bin
+	cp ../ftest/fm4/guls.bin .
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm4.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta4.csv
 	# Run fm5
@@ -142,7 +151,7 @@ ftest()
 	cp ../ftest/fm5/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm5/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm5/fm_profile.bin fm/fm_profile.bin
-	cp ../ftest/fm5/guls.bin
+	cp ../ftest/fm5/guls.bin .
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm5.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta5.csv
 	# Run fm6
@@ -150,7 +159,7 @@ ftest()
 	cp ../ftest/fm6/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm6/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm6/fm_profile.bin fm/fm_profile.bin
-	cp ../ftest/fm6/guls.bin
+	cp ../ftest/fm6/guls.bin .
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm6.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta6.csv
 	# Run fm7
@@ -158,7 +167,7 @@ ftest()
 	cp ../ftest/fm7/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm7/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm7/fm_profile.bin fm/fm_profile.bin
-	cp ../ftest/fm7/guls.bin
+	cp ../ftest/fm7/guls.bin .
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm7.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta7.csv
 	# Restore examples folder to initial state
