@@ -4,15 +4,15 @@ init()
 {
 	CTRL=ctrl
 	echo $OSTYPE
-	#if [[ "$OSTYPE" == "cygwin" ]]; then
-	#	if [ -f /cygdrive/c/Oasis/bin/eve ]; then
-	#	echo 'Running Windows test'
-	#	PATH=/cygdrive/c/Oasis/bin:$PATH
-	#	CTRL=wctrl
-	#	else echo 'Running Cygwin test'
-	#	fi
-	#else echo 'Running Linux test'
-	#fi
+	if [[ "$OSTYPE" == "cygwin" ]]; then
+		if [ -f /cygdrive/c/Oasis/bin/eve ]; then
+		echo 'Running Windows test'
+		PATH=/cygdrive/c/Oasis/bin:$PATH
+		CTRL=wctrl
+		else echo 'Running Cygwin test'
+		fi
+	else echo 'Running Linux test'
+	fi
 	echo $CTRL
 	if [ ! -d examples ]; then
 		tar -xzf examples.tar.gz
@@ -21,6 +21,7 @@ init()
 
 installertest()
 {
+    echo 'Running installer test'
     cd installertest	
 	mkdir -p testout
 	cd ..
@@ -57,7 +58,7 @@ installertest()
 	# stdout to csv
 	cdftocsv < ../installertest/testout/getmodelout1_1.bin > ../installertest/testout/getmodelout1_1.csv
 
-	gultocsv -s < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
+	gultocsv < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
 
 	fmtocsv < ../installertest/testout/fmcalcout1_1.bin > ../installertest/testout/fmcalcout1_1.csv
 	fmtocsv < ../installertest/testout/fmcalcoutbeta1_1.bin > ../installertest/testout/fmcalcoutbeta1_1.csv
@@ -85,6 +86,9 @@ installertest()
 	fmxreftobin < ../installertest/testout/fmxref.csv > ../installertest/testout/fmxref.bin
 
 	cd ../installertest/testout
+	cdfdatatobin damage_cdf_chunk_11 102 < damage_cdf_chunk_1.csv
+	cdfdatatocsv < damage_cdf_chunk_11.bin > damage_cdf_chunk_11.csv
+
 	md5sum -c ../$CTRL.md5
 
 	if [ "$?" -ne "0" ]; then
@@ -101,6 +105,7 @@ installertest()
 
 ftest()
 {
+	echo 'Running fm test'
 	cd ftest
 	mkdir -p testout
 	
@@ -126,7 +131,7 @@ ftest()
 	fmcalc < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fm1_c2.bin
 	fmcalc_beta < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fmbeta1_c1.bin
 	fmcalc_beta < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fmbeta1_c2.bin
-	# Run fm2 - broken
+	# Run fm2 - invalid test, needs replacing
 	#cp ../ftest/fm2/fm_data.bin fm/fm_data.bin
 	#fmcalc < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fm2_c1.csv
 	#fmcalc < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fm2_c2.csv
@@ -170,6 +175,18 @@ ftest()
 	cp ../ftest/fm7/guls.bin .
 	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm7.csv
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta7.csv
+	# Run fm8
+	cp ../ftest/fm8/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm8/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm8/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm8/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta8.csv
+	# Run fm9
+	cp ../ftest/fm9/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm9/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm9/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm9/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta9.csv
 	# Restore examples folder to initial state
 	cp ../ftest/fm0/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
@@ -188,7 +205,7 @@ ftest()
 	# exit 0
 	fi
 
-	#rm *
+	rm *
 	cd ../..
 
 }
