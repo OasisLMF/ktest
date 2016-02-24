@@ -77,7 +77,6 @@ installertest()
 	damagetobin < ../installertest/testout/damage_bin_dict.csv > ../installertest/testout/damage_bin_dict.bin
 
 	cdfdatatocsv < ../examples/cdf/damage_cdf_chunk_1.bin > ../installertest/testout/damage_cdf_chunk_1.csv
-	#cdfdatatobin < ../installertest/testout/damage_cdf_chunk_1.csv > ../installertest/testout/damage_cdf_chunk_1.bin
 
 	fmdatatocsv < ../examples/fm/fm_data.bin > ../installertest/testout/fm_data.csv
 	fmdatatobin < ../installertest/testout/fm_data.csv > ../installertest/testout/fm_data.bin
@@ -193,7 +192,12 @@ ftest()
 	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
 	rm guls.bin
-
+	# Run fm10
+	cp ../ftest/fm10/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm10/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm10/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm10/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta10.csv
 	cd ../ftest/testout
 	md5sum -c ../$CTRL.md5
 
