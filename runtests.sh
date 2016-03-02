@@ -130,10 +130,12 @@ ftest()
 	fmcalc < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fm1_c2.bin
 	fmcalc_beta < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fmbeta1_c1.bin
 	fmcalc_beta < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fmbeta1_c2.bin
-	# Run fm2 - invalid test, needs replacing
-	#cp ../ftest/fm2/fm_data.bin fm/fm_data.bin
-	#fmcalc < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fm2_c1.csv
-	#fmcalc < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fm2_c2.csv
+	# Run fm2 
+	cp ../ftest/fm2/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm2/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm2/fm_profile.bin fm/fm_profile.bin
+	fmcalc < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fmbeta2_c1.bin
+	fmcalc < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fmbeta2_c2.bin
 	# Run fm3
 	cp ../ftest/fm3/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm3/fm_programme.bin fm/fm_programme.bin
