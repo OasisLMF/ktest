@@ -1,0 +1,3 @@
+"event_id", "prog_id", "layer_id", "output_id", "sidx", "loss"
+1, 1, 1, 1, -1, 0.00
+1, 1, 1, 1, 1, 367225.00
