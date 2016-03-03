@@ -27,6 +27,12 @@ installertest()
 	cd ..
 	
 	cd examples
+	# Restore examples folder to initial state
+	cp ../ftest/fm0/fm_data.bin fm/fm_data.bin
+	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
+	rm guls.bin
 	# test eve
 	eve 1 1 2 > ../installertest/testout/eveout1_1.bin
 	eve 1 2 2 > ../installertest/testout/eveout1_2.bin
@@ -200,6 +206,37 @@ ftest()
 	cp ../ftest/fm10/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm10/guls.bin .
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta10.csv
+	# Run fm11
+	cp ../ftest/fm11/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm11/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm11/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm11/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta11.csv
+	# Run fm12
+	cp ../ftest/fm12/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm12/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm12/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm12/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta12.csv
+	# Run fm13
+	cp ../ftest/fm13/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm13/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm13/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm13/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta13.csv
+	# Run fm14
+	cp ../ftest/fm14/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm14/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm14/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm14/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta14.csv
+	# Run fm15
+	cp ../ftest/fm15/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm15/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm15/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm15/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta15.csv
+	
 	cd ../ftest/testout
 	md5sum -c ../$CTRL.md5
 
