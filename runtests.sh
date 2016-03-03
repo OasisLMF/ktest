@@ -238,7 +238,12 @@ ftest()
 	cp ../ftest/fm15/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm15/guls.bin .
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta15.csv
-	
+	# Run fm16
+	cp ../ftest/fm16/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm16/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm16/fm_profile.bin fm/fm_profile.bin
+	cp ../ftest/fm16/guls.bin .
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta16.csv
 	cd ../ftest/testout
 	md5sum -c ../$CTRL.md5
 
