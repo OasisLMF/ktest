@@ -32,7 +32,7 @@ installertest()
 	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
-	rm guls.bin
+
 	# test eve
 	eve 1 1 2 > ../installertest/testout/eveout1_1.bin
 	eve 1 2 2 > ../installertest/testout/eveout1_2.bin
@@ -120,8 +120,7 @@ ftest()
 	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
-	rm guls.bin
-	
+		
 	eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -r -R > ../ftest/testout/gul_c1.bin
 	eve 2 1 1 | getmodel 2 | gulcalc -C2 -S100 -r -R > ../ftest/testout/gul_c2.bin
 	# Run fm0
