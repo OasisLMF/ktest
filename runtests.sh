@@ -115,7 +115,13 @@ ftest()
 	mkdir -p testout
 	
 	cd ../examples
-
+	# Restore examples folder to initial state
+	cp ../ftest/fm0/fm_data.bin fm/fm_data.bin
+	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
+	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
+	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
+	rm guls.bin
+	
 	eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -r -R > ../ftest/testout/gul_c1.bin
 	eve 2 1 1 | getmodel 2 | gulcalc -C2 -S100 -r -R > ../ftest/testout/gul_c2.bin
 	# Run fm0
@@ -194,12 +200,6 @@ ftest()
 	cp ../ftest/fm9/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm9/guls.bin .
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta9.csv
-	# Restore examples folder to initial state
-	cp ../ftest/fm0/fm_data.bin fm/fm_data.bin
-	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
-	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
-	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
-	rm guls.bin
 	# Run fm10
 	cp ../ftest/fm10/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm10/fm_policytc.bin fm/fm_policytc.bin
@@ -218,6 +218,8 @@ ftest()
 	cp ../ftest/fm12/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm12/guls.bin .
 	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta12.csv
+	cp ../ftest/fm12/fm_profile_alloc.bin fm/fm_profile.bin
+	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta12_alloc.csv
 	# Run fm13
 	cp ../ftest/fm13/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm13/fm_policytc.bin fm/fm_policytc.bin
