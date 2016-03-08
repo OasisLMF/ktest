@@ -53,12 +53,12 @@ installertest()
 
 	# test fmcalc
 	eve 1 1 2 | getmodel 1 | gulcalc -C1 -S100 -R -r | fmcalc >  ../installertest/testout/fmcalcout1_1.bin
-	eve 1 1 2 | getmodel 1 | gulcalc -C1 -S100 -R -r | fmcalc_beta >  ../installertest/testout/fmcalcoutbeta1_1.bin
+	# eve 1 1 2 | getmodel 1 | gulcalc -C1 -S100 -R -r | fmcalc_beta >  ../installertest/testout/fmcalcoutbeta1_1.bin
 
 	# test outputcalc
 	eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -R -r | outputcalc >  ../installertest/testout/gulout1.csv
 	eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -R -r | fmcalc | outputcalc >  ../installertest/testout/fmout1.csv
-	eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -R -r | fmcalc_beta | outputcalc >  ../installertest/testout/fmoutbeta_1.csv
+	# eve 1 1 1 | getmodel 1 | gulcalc -C1 -S100 -R -r | fmcalc_beta | outputcalc >  ../installertest/testout/fmoutbeta_1.csv
 
 	# test data conversion utilities
 	# stdout to csv
@@ -67,7 +67,7 @@ installertest()
 	gultocsv < ../installertest/testout/gulcalcout1_1.bin > ../installertest/testout/gulcalcout1_1.csv
 
 	fmtocsv < ../installertest/testout/fmcalcout1_1.bin > ../installertest/testout/fmcalcout1_1.csv
-	fmtocsv < ../installertest/testout/fmcalcoutbeta1_1.bin > ../installertest/testout/fmcalcoutbeta1_1.csv
+	# fmtocsv < ../installertest/testout/fmcalcoutbeta1_1.bin > ../installertest/testout/fmcalcoutbeta1_1.csv
 
 	# input data to csv and bin
 	evetocsv < ../examples/e_chunk_1_data.bin > ../installertest/testout/e_chunk_1_data.csv
@@ -134,19 +134,19 @@ ftest()
 	cp ../ftest/fm0/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm0/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm0/fm_profile.bin fm/fm_profile.bin
-	fmcalc < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fm0_c1.csv
-	fmcalc < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fm0_c2.csv
-	fmcalc_beta < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fmbeta0_c1.csv
-	fmcalc_beta < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fmbeta0_c2.csv
+	#fmcalc1 < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fm0_c1.csv
+	#fmcalc1 < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fm0_c2.csv
+	fmcalc < ../ftest/testout/gul_c1.bin | fmtocsv > ../ftest/testout/fmbeta0_c1.csv
+	fmcalc < ../ftest/testout/gul_c2.bin | fmtocsv > ../ftest/testout/fmbeta0_c2.csv
 	# Run fm1
 	cp ../ftest/fm1/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm1/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm1/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm1/fm_profile.bin fm/fm_profile.bin
-	fmcalc < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fm1_c1.bin
-	fmcalc < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fm1_c2.bin
-	fmcalc_beta < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fmbeta1_c1.bin
-	fmcalc_beta < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fmbeta1_c2.bin
+	#fmcalc1 < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fm1_c1.bin
+	#fmcalc1 < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fm1_c2.bin
+	fmcalc < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fmbeta1_c1.bin
+	fmcalc < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fmbeta1_c2.bin
 	# Run fm2 
 	cp ../ftest/fm2/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm2/fm_policytc.bin fm/fm_policytc.bin
@@ -159,96 +159,96 @@ ftest()
 	cp ../ftest/fm3/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm3/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm3/guls.bin .
-	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm3.csv
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta3.csv
+	#fmcalc1 < guls.bin | fmtocsv > ../ftest/testout/fm3.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta3.csv
 	# Run fm4
 	cp ../ftest/fm4/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm4/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm4/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm4/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm4/guls.bin .
-	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm4.csv
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta4.csv
+	#fmcalc1 < guls.bin | fmtocsv > ../ftest/testout/fm4.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta4.csv
 	# Run fm5
 	cp ../ftest/fm5/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm5/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm5/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm5/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm5/guls.bin .
-	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm5.csv
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta5.csv
+	#fmcalc1 < guls.bin | fmtocsv > ../ftest/testout/fm5.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta5.csv
 	# Run fm6
 	cp ../ftest/fm6/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm6/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm6/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm6/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm6/guls.bin .
-	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm6.csv
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta6.csv
+	#fmcalc1 < guls.bin | fmtocsv > ../ftest/testout/fm6.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta6.csv
 	# Run fm7
 	cp ../ftest/fm7/fm_data.bin fm/fm_data.bin
 	cp ../ftest/fm7/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm7/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm7/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm7/guls.bin .
-	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fm7.csv
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta7.csv
+	#fmcalc1 < guls.bin | fmtocsv > ../ftest/testout/fm7.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta7.csv
 	# Run fm8
 	cp ../ftest/fm8/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm8/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm8/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm8/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta8.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta8.csv
 	# Run fm9
 	cp ../ftest/fm9/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm9/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm9/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm9/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta9.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta9.csv
 	# Run fm10
 	cp ../ftest/fm10/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm10/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm10/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm10/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta10.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta10.csv
 	# Run fm11
 	cp ../ftest/fm11/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm11/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm11/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm11/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta11.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta11.csv
 	# Run fm12
 	cp ../ftest/fm12/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm12/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm12/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm12/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta12.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta12.csv
 	cp ../ftest/fm12/fm_profile_alloc.bin fm/fm_profile.bin
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta12_alloc.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta12_alloc.csv
 	# Run fm13
 	cp ../ftest/fm13/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm13/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm13/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm13/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta13.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta13.csv
 	# Run fm14
 	cp ../ftest/fm14/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm14/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm14/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm14/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta14.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta14.csv
 	# Run fm15
 	cp ../ftest/fm15/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm15/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm15/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm15/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta15.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta15.csv
 	# Run fm16
 	cp ../ftest/fm16/fm_programme.bin fm/fm_programme.bin
 	cp ../ftest/fm16/fm_policytc.bin fm/fm_policytc.bin
 	cp ../ftest/fm16/fm_profile.bin fm/fm_profile.bin
 	cp ../ftest/fm16/guls.bin .
-	fmcalc_beta < guls.bin | fmtocsv > ../ftest/testout/fmbeta16.csv
+	fmcalc < guls.bin | fmtocsv > ../ftest/testout/fmbeta16.csv
 	cd ../ftest/testout
 	md5sum -c ../$CTRL.md5
 
