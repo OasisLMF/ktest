@@ -84,8 +84,14 @@ installertest()
 
 	cdfdatatocsv < ../examples/cdf/damage_cdf_chunk_1.bin > ../installertest/testout/damage_cdf_chunk_1.csv
 
-	fmdatatocsv < ../examples/fm/fm_data.bin > ../installertest/testout/fm_data.csv
-	fmdatatobin < ../installertest/testout/fm_data.csv > ../installertest/testout/fm_data.bin
+	fmprogrammetocsv < ../examples/fm/fm_programme.bin > ../installertest/testout/fm_programme.csv
+	fmprogrammetobin < ../installertest/testout/fm_programme.csv > ../installertest/testout/fm_programme.bin
+	
+	fmpolicytctocsv < ../examples/fm/fm_policytc.bin > ../installertest/testout/fm_policytc.csv
+	fmpolicytctobin < ../installertest/testout/fm_policytc.csv > ../installertest/testout/fm_policytc.bin
+
+	fmprofiletocsv < ../examples/fm/fm_profile.bin > ../installertest/testout/fm_profile.csv
+	fmprofiletobin < ../installertest/testout/fm_profile.csv > ../installertest/testout/fm_profile.bin
 
 	fmxreftocsv < ../examples/fm/fmxref.bin > ../installertest/testout/fmxref.csv
 	fmxreftobin < ../installertest/testout/fmxref.csv > ../installertest/testout/fmxref.bin
