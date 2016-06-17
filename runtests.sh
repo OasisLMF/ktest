@@ -8,7 +8,7 @@ init()
 		if [ -f /cygdrive/c/Oasis/bin/eve ]; then
 		echo 'Running Windows test'
 		PATH=/cygdrive/c/Oasis/bin:$PATH
-		CTRL=wctrl
+		CTRL=w64ctrl
 		else echo 'Running Cygwin test'
 		fi
 	else echo 'Running Linux test'
