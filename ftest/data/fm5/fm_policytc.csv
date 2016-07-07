@@ -1,2 +1,2 @@
-"prog_id", "layer_id", "level_id","agg_id","PolicyTC_id"
-1, 1, 1, 1, 1
+layer_id,level_id,agg_id,policytc_id
+1,1,1,1

@@ -1,4 +1,4 @@
-EVENT_ID,ITEM_ID,IDX,GUL
+event_id,item_id,sidx,loss
 1,1,-1,0
 1,1,-2,0
 1,2,-1,0
