@@ -95,6 +95,33 @@ installertest()
 	leccalc -Kfm1/summary -s ../installertest/testout/fm_sample_mean_oep_1.csv
     leccalc -Kfm1/summary -m ../installertest/testout/fm_wheatsheaf_mean_oep_1.csv
 
+	leccalc -r -Kfm1/summary -F ../ktest/testout/fm_full_uncertainty_aep_1_r.csv  
+	leccalc -r -Kfm1/summary -W ../ktest/testout/fm_wheatsheaf_aep_1_r.csv
+	leccalc -r -Kfm1/summary -S ../ktest/testout/fm_sample_mean_aep_1_r.csv
+	leccalc -r -Kfm1/summary -M ../ktest/testout/fm_wheatsheaf_mean_aep_1_r.csv
+    leccalc -r -Kfm1/summary -f ../ktest/testout/fm_full_uncertainty_oep_1_r.csv
+	leccalc -r -Kfm1/summary -w ../ktest/testout/fm_wheatsheaf_oep_1_r.csv
+	leccalc -r -Kfm1/summary -s ../ktest/testout/fm_sample_mean_oep_1_r.csv
+    leccalc -r -Kfm1/summary -m ../ktest/testout/fm_wheatsheaf_mean_oep_1_r.csv
+
+	leccalc -r -Kgul2/summary -F ../ktest/testout/gul_full_uncertainty_aep_2_r.csv 
+	leccalc -r -Kgul2/summary -W ../ktest/testout/gul_wheatsheaf_aep_2_r.csv 
+	leccalc -r -Kgul2/summary -S ../ktest/testout/gul_sample_mean_aep_2_r.csv
+	leccalc -r -Kgul2/summary -M ../ktest/testout/gul_wheatsheaf_mean_aep_2_r.csv 
+    leccalc -r -Kgul2/summary -f ../ktest/testout/gul_full_uncertainty_oep_2_r.csv
+	leccalc -r -Kgul2/summary -w ../ktest/testout/gul_wheatsheaf_oep_2_r.csv
+	leccalc -r -Kgul2/summary -s ../ktest/testout/gul_sample_mean_oep_2_r.csv 
+    leccalc -r -Kgul2/summary -m ../ktest/testout/gul_wheatsheaf_mean_oep_2_r.csv
+
+	leccalc -r -Kfm2/summary -F ../ktest/testout/fm_full_uncertainty_aep_2_r.csv  
+	leccalc -r -Kfm2/summary -W ../ktest/testout/fm_wheatsheaf_aep_2_r.csv
+	leccalc -r -Kfm2/summary -S ../ktest/testout/fm_sample_mean_aep_2_r.csv
+	leccalc -r -Kfm2/summary -M ../ktest/testout/fm_wheatsheaf_mean_aep_2_r.csv
+    leccalc -r -Kfm2/summary -f ../ktest/testout/fm_full_uncertainty_oep_2_r.csv
+	leccalc -r -Kfm2/summary -w ../ktest/testout/fm_wheatsheaf_oep_2_r.csv
+	leccalc -r -Kfm2/summary -s ../ktest/testout/fm_sample_mean_oep_2_r.csv
+    leccalc -r -Kfm2/summary -m ../ktest/testout/fm_wheatsheaf_mean_oep_2_r.csv
+
 	# test pltcalc
 	pltcalc < ../installertest/testout/gulsummarycalc1.bin > ../installertest/testout/gulplt1.csv
 	pltcalc < ../installertest/testout/gulsummarycalc2.bin > ../installertest/testout/gulplt2.csv
