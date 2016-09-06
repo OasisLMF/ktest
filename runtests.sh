@@ -95,6 +95,15 @@ installertest()
 	leccalc -Kfm1/summary -s ../installertest/testout/fm_sample_mean_oep_1.csv
     leccalc -Kfm1/summary -m ../installertest/testout/fm_wheatsheaf_mean_oep_1.csv
 
+	leccalc -r -Kgul1/summary -F ../installertest/testout/gul_full_uncertainty_aep_1_r.csv 
+	leccalc -r -Kgul1/summary -W ../installertest/testout/gul_wheatsheaf_aep_1_r.csv 
+	leccalc -r -Kgul1/summary -S ../installertest/testout/gul_sample_mean_aep_1_r.csv
+	leccalc -r -Kgul1/summary -M ../installertest/testout/gul_wheatsheaf_mean_aep_1_r.csv 
+    leccalc -r -Kgul1/summary -f ../installertest/testout/gul_full_uncertainty_oep_1_r.csv
+	leccalc -r -Kgul1/summary -w ../installertest/testout/gul_wheatsheaf_oep_1_r.csv
+	leccalc -r -Kgul1/summary -s ../installertest/testout/gul_sample_mean_oep_1_r.csv 
+    leccalc -r -Kgul1/summary -m ../installertest/testout/gul_wheatsheaf_mean_oep_1_r.csv
+
 	leccalc -r -Kfm1/summary -F ../installertest/testout/fm_full_uncertainty_aep_1_r.csv  
 	leccalc -r -Kfm1/summary -W ../installertest/testout/fm_wheatsheaf_aep_1_r.csv
 	leccalc -r -Kfm1/summary -S ../installertest/testout/fm_sample_mean_aep_1_r.csv
@@ -180,6 +189,8 @@ installertest()
 	gulsummaryxreftocsv < ../examples/input/gulsummaryxref.bin | gulsummaryxreftobin > ../installertest/testout/gulsummaryxref.bin
 	
 	fmsummaryxreftocsv < ../examples/input/fmsummaryxref.bin | fmsummaryxreftobin > ../installertest/testout/fmsummaryxref.bin
+
+	returnperiodtocsv < ../examples/input/returnperiods.bin | returnperiodtobin > ../installertest/testout/returnperiods.bin
 
 	occurrencetocsv < ../examples/static/occurrence.bin | occurrencetobin -P10000 > ../installertest/testout/occurrence.bin
 
