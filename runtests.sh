@@ -350,18 +350,18 @@ ftest()
 
 	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm11.csv
 	# # Run fm12
-	# cp ../ftest/fm12/items.bin input/items.bin
-	# cp ../ftest/fm12/coverages.bin input/coverages.bin	
-	# cp ../ftest/fm12/fm_xref.bin input/fm_xref.bin
-	# cp ../ftest/fm12/fm_programme.bin input/fm_programme.bin
-	# cp ../ftest/fm12/fm_policytc.bin input/fm_policytc.bin
-	# cp ../ftest/fm12/fm_profile.bin input/fm_profile.bin
-	# cp ../ftest/fm12/guls.bin .
+	cp ../ftest/fm12/items.bin input/items.bin
+	cp ../ftest/fm12/coverages.bin input/coverages.bin	
+	cp ../ftest/fm12/fm_xref.bin input/fm_xref.bin
+	cp ../ftest/fm12/fm_programme.bin input/fm_programme.bin
+	cp ../ftest/fm12/fm_policytc.bin input/fm_policytc.bin
+	cp ../ftest/fm12/fm_profile.bin input/fm_profile.bin
+	cp ../ftest/fm12/guls.bin .
 
-	# fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm12.csv
-	# cp ../ftest/fm12/fm_profile_alloc.bin input/fm_profile.bin
-	# cp ../ftest/fm12/fm_xref_alloc.bin input/fm_xref.bin
-	# fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm12_alloc.csv
+	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm12.csv
+	cp ../ftest/fm12/fm_profile_alloc.bin input/fm_profile.bin
+	cp ../ftest/fm12/fm_xref_alloc.bin input/fm_xref.bin
+	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm12_alloc.csv
 	# Run fm13
 	cp ../ftest/fm13/items.bin input/items.bin
 	cp ../ftest/fm13/coverages.bin input/coverages.bin	
