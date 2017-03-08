@@ -4,16 +4,15 @@ init()
 {
 	CTRL=ctrl
 	echo $OSTYPE
-	# if [[ "$OSTYPE" == "cygwin" ]]; then
-	# 	if [ -f /cygdrive/c/Oasis/bin/eve ]; then
-	# 	echo 'Running Windows test'
-	# 	PATH=/cygdrive/c/Oasis/bin:$PATH
-	# 	CTRL=w64ctrl
-	# 	else echo 'Running Cygwin test'
-	# 	fi
-	# else echo 'Running Linux test'
-	# fi
-	# echo $CTRL
+	if [[ "$OSTYPE" == "cygwin" ]]; then
+		if [ -f cw64bld ]; then
+	 	echo 'Running Windows test'
+	 	PATH=/cygdrive/c/Oasis/bin:$PATH
+	
+	 	else echo 'Running Cygwin test'
+	 	fi
+	 else echo 'Running Linux test'
+	 fi
 	if [ ! -d examples ]; then
 		tar -xzf examples.tar.gz
 	fi
@@ -155,7 +154,7 @@ installertest()
 
 	# test stream conversion components
 	# stdout to csv
-	cdftocsv < ../installertest/testout/getmodelout.bin > ../installertest/testout/getmodelout.csv
+	cdftocsv -s < ../installertest/testout/getmodelout.bin > ../installertest/testout/getmodelout.csv
 	gultocsv -f < ../installertest/testout/gulcalci.bin > ../installertest/testout/gulcalci.csv
 	gultocsv -f < ../installertest/testout/gulcalcc.bin > ../installertest/testout/gulcalcc.csv
 	fmtocsv -f < ../installertest/testout/fmcalc.bin > ../installertest/testout/fmcalc.csv
@@ -170,7 +169,7 @@ installertest()
 	# input data to csv and bin
 	evetocsv < ../examples/input/events.bin | evetobin > ../installertest/testout/events.bin
 	
-	randtocsv < ../examples/static/random.bin | randtobin > ../installertest/testout/random.bin
+	randtocsv -r < ../examples/static/random.bin | randtobin > ../installertest/testout/random.bin
 
 	itemtocsv < ../examples/input/items.bin | itemtobin > ../installertest/testout/items.bin
 
@@ -192,7 +191,7 @@ installertest()
 
 	returnperiodtocsv < ../examples/input/returnperiods.bin | returnperiodtobin > ../installertest/testout/returnperiods.bin
 
-	occurrencetocsv < ../examples/static/occurrence.bin | occurrencetobin -P10000 > ../installertest/testout/occurrence.bin
+	occurrencetocsv < ../examples/input/occurrence.bin | occurrencetobin -P10000 > ../installertest/testout/occurrence.bin
 
 	vulnerabilitytocsv < ../examples/static/vulnerability.bin | vulnerabilitytobin -d 102 > ../installertest/testout/vulnerability.bin
 	
@@ -245,6 +244,8 @@ ftest()
 	fmcalc < ../ftest/testout/gul_c1.bin | fmtocsv -f > ../ftest/testout/fm0_c1.csv
 	fmcalc < ../ftest/testout/gul_c2.bin | fmtocsv -f > ../ftest/testout/fm0_c2.csv
 	# Run fm1
+	cp ../ftest/fm1/items.bin input/items.bin
+	cp ../ftest/fm1/coverages.bin input/coverages.bin	
 	cp ../ftest/fm1/fm_xref.bin input/fm_xref.bin
 	cp ../ftest/fm1/fm_programme.bin input/fm_programme.bin
 	cp ../ftest/fm1/fm_policytc.bin input/fm_policytc.bin
@@ -253,6 +254,8 @@ ftest()
 	fmcalc < ../ftest/testout/gul_c1.bin  > ../ftest/testout/fm1_c1.bin
 	fmcalc < ../ftest/testout/gul_c2.bin  > ../ftest/testout/fm1_c2.bin
 	# Run fm2 
+	cp ../ftest/fm2/items.bin input/items.bin
+	cp ../ftest/fm2/coverages.bin input/coverages.bin
 	cp ../ftest/fm2/fm_xref.bin input/fm_xref.bin
 	cp ../ftest/fm2/fm_programme.bin input/fm_programme.bin
 	cp ../ftest/fm2/fm_policytc.bin input/fm_policytc.bin

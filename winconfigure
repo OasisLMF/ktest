@@ -1,0 +1,7 @@
+#!/bin/sh
+SYSNAME=`uname -o`
+ 
+if [ "$SYSNAME" = "Cygwin" ]; then
+   	touch cw64bld
+   	exit 0
+fi
