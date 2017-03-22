@@ -405,6 +405,39 @@ ftest()
 	cp ../ftest/fm16/guls.bin .
 
 	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm16.csv
+
+	# Run fm17
+	cp ../ftest/fm17/items.bin input/items.bin
+	cp ../ftest/fm17/coverages.bin input/coverages.bin	
+	cp ../ftest/fm17/fm_xref.bin input/fm_xref.bin
+	cp ../ftest/fm17/fm_programme.bin input/fm_programme.bin
+	cp ../ftest/fm17/fm_policytc.bin input/fm_policytc.bin
+	cp ../ftest/fm17/fm_profile.bin input/fm_profile.bin
+	cp ../ftest/fm17/guls.bin .
+
+	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm17.csv
+
+	# Run fm18
+	cp ../ftest/fm18/items.bin input/items.bin
+	cp ../ftest/fm18/coverages.bin input/coverages.bin	
+	cp ../ftest/fm18/fm_xref.bin input/fm_xref.bin
+	cp ../ftest/fm18/fm_programme.bin input/fm_programme.bin
+	cp ../ftest/fm18/fm_policytc.bin input/fm_policytc.bin
+	cp ../ftest/fm18/fm_profile.bin input/fm_profile.bin
+	cp ../ftest/fm18/guls.bin .
+
+	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm18.csv
+
+	# Run fm19
+	cp ../ftest/fm19/items.bin input/items.bin
+	cp ../ftest/fm19/coverages.bin input/coverages.bin	
+	cp ../ftest/fm19/fm_xref.bin input/fm_xref.bin
+	cp ../ftest/fm19/fm_programme.bin input/fm_programme.bin
+	cp ../ftest/fm19/fm_policytc.bin input/fm_policytc.bin
+	cp ../ftest/fm19/fm_profile.bin input/fm_profile.bin
+	cp ../ftest/fm19/guls.bin .
+
+	fmcalc < guls.bin | fmtocsv -f > ../ftest/testout/fm19.csv
 	cd ../ftest/testout
 	md5sum -c ../$CTRL.md5
 
