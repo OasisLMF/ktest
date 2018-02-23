@@ -14,7 +14,8 @@ If testing in Windows, Cygwin must be used for running the test. For Cygwin set-
 
 * Install ktools
 * Download this repository
-* cd into the ktest directory and use the command
+* Configure the test for the operating system. This is either ./configure for linux or ./winconfigure for windows.
+* Run the test by running the following the command.
 
 ``` sh
 $ sh runtests.sh
