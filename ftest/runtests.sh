@@ -72,6 +72,9 @@ main()
 	# Run fm20
 	cd ../fm20
 	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm20.csv
+	# Run fm21
+	cd ../fm21
+	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm21.csv
 	
 	cd ../testout
 	md5sum -c ../$CTRL.md5
