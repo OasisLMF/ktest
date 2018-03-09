@@ -78,11 +78,16 @@ main()
 	# Run fm22
 	cd ../fm22
 	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm22.csv
-        # Run fm23
+    # Run fm23
 	cd ../fm23
 	fmcalc -p direct -n < stream/gulitem.bin | tee ../testout/fm23_ils.bin | fmtocsv > ../testout/fm23_ils.csv
   	fmcalc -p ri1 -n < ../testout/fm23_ils.bin | tee ../testout/fm23_ri1.bin | fmtocsv > ../testout/fm23_ri1.csv
 	fmcalc -p ri2 -n < ../testout/fm23_ri1.bin | fmtocsv > ../testout/fm23_ri2.csv
+    # Run fm24
+	cd ../fm24
+	fmcalc < stream/gulitem.bin | tee ../testout/fm24_ils.bin | fmtocsv > ../testout/fm24_ils.csv
+  	fmcalc -p ri1 -n < ../testout/fm24_ils.bin | tee ../testout/fm24_ri1.bin | fmtocsv > ../testout/fm24_ri1.csv
+	fmcalc -p ri2 -n < ../testout/fm24_ri1.bin | fmtocsv > ../testout/fm24_ri2.csv
 
 	cd ../testout
 	md5sum -c ../$CTRL.md5
