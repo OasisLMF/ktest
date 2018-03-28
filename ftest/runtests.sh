@@ -88,8 +88,9 @@ main()
 	fmcalc < stream/gulitem.bin | tee ../testout/fm24_ils.bin | fmtocsv > ../testout/fm24_ils.csv
   	fmcalc -p ri1 -n < ../testout/fm24_ils.bin | tee ../testout/fm24_ri1.bin | fmtocsv > ../testout/fm24_ri1.csv
 	fmcalc -p ri2 -n < ../testout/fm24_ri1.bin | fmtocsv > ../testout/fm24_ri2.csv
-
-	cd ../testout
+	cd ../fm25
+	fmcalc < stream/gulitem.bin | tee ../testout/fm25_ils.bin | fmtocsv > ../testout/fm25_ils.csv
+  	cd ../testout
 	md5sum -c ../$CTRL.md5
 
 	if [ "$?" -ne "0" ]; then
