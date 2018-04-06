@@ -80,7 +80,7 @@ main()
 	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm22.csv
     # Run fm23
 	cd ../fm23
-	fmcalc -p direct -n < stream/gulitem.bin | tee ../testout/fm23_ils.bin | fmtocsv > ../testout/fm23_ils.csv
+	fmcalc -p direct < stream/gulitem.bin | tee ../testout/fm23_ils.bin | fmtocsv > ../testout/fm23_ils.csv
   	fmcalc -p ri1 -n < ../testout/fm23_ils.bin | tee ../testout/fm23_ri1.bin | fmtocsv > ../testout/fm23_ri1.csv
 	fmcalc -p ri2 -n < ../testout/fm23_ri1.bin | fmtocsv > ../testout/fm23_ri2.csv
     # Run fm24
