@@ -97,6 +97,9 @@ main()
   	cd ../fm27
 	fmcalc -p iteration1 < stream/fm24_ri2.bin  | tee ../testout/fm27_it1.bin | fmtocsv > ../testout/fm27_it1.csv
   	fmcalc -p iteration2 < ../testout/fm27_it1.bin  | fmtocsv > ../testout/fm27_it2.csv
+	cd ../fm28
+	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm28.csv
+
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
