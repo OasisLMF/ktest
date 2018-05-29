@@ -94,6 +94,7 @@ main()
 	fmcalc < stream/gulitem.bin | tee ../testout/fm25_ils.bin | fmtocsv > ../testout/fm25_ils.csv
 	cd ../fm26
 	fmcalc -p ri3 < stream/fm24_ri2.bin  | fmtocsv > ../testout/fm26.csv
+	fmcalc -p ri3_net -n < stream/fm24_ri2.bin  | fmtocsv > ../testout/fm26_net.csv
   	cd ../fm27
 	fmcalc -p iteration1 < stream/fm24_ri2.bin  | tee ../testout/fm27_it1.bin | fmtocsv > ../testout/fm27_it1.csv
   	fmcalc -p iteration2 < ../testout/fm27_it1.bin  | fmtocsv > ../testout/fm27_it2.csv
