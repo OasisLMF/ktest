@@ -89,16 +89,10 @@ main()
   	fmcalc -a0 -p ri1 -n < ../testout/fm24_ils.bin | tee ../testout/fm24_ri1.bin | fmtocsv > ../testout/fm24_ri1.csv
 	fmcalc -a2 -p ri2 -n < ../testout/fm24_ri1.bin | tee ../testout/fm24_ri2.bin | fmtocsv > ../testout/fm24_ri2.csv
 	fmcalc -a2 -p ri3 -n < ../testout/fm24_ri2.bin | tee ../testout/fm24_ri3.bin | fmtocsv > ../testout/fm24_ri3.csv
-	#fmcalc -a2 -p ri4 < ../testout/fm24_ri3.bin | tee ../testout/fm24_ri4.bin | fmtocsv > ../testout/fm24_ri4_gross.csv
 	fmcalc -a2 -p ri4 -n < ../testout/fm24_ri3.bin | tee ../testout/fm24_ri4.bin | fmtocsv > ../testout/fm24.csv
 	cd ../fm25
-	fmcalc < stream/gulitem.bin | tee ../testout/fm25_ils.bin | fmtocsv > ../testout/fm25_ils.csv
-	cd ../fm26
-	fmcalc -a2 -p ri3 < stream/fm24_ri2.bin  | fmtocsv > ../testout/fm26.csv
-	fmcalc -a2 -p ri3_net -n < stream/fm24_ri2.bin  | fmtocsv > ../testout/fm26_net.csv
-  	cd ../fm27
-	fmcalc -p iteration1 < stream/fm24_ri2.bin  | tee ../testout/fm27_it1.bin | fmtocsv > ../testout/fm27_it1.csv
-  	fmcalc -p iteration2 < ../testout/fm27_it1.bin  | fmtocsv > ../testout/fm27_it2.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv > ../testout/fm25.csv
+	
 	cd ../fm28
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm28.csv
 
