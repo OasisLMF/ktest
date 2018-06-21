@@ -92,7 +92,8 @@ main()
 	fmcalc -a2 -p ri4 -n < ../testout/fm24_ri3.bin | tee ../testout/fm24_ri4.bin | fmtocsv > ../testout/fm24.csv
 	cd ../fm25
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv > ../testout/fm25.csv
-	
+	cd ../fm26
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv > ../testout/fm26.csv	
 	cd ../fm28
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm28.csv
 
