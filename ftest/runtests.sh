@@ -97,6 +97,7 @@ main()
     # Run fm27
 	cd ../fm27
 	fmcalc -a0 < stream/gulitem.bin | tee ../testout/fm27_ils.bin | fmtocsv > ../testout/fm27_ils.csv
+	fmcalc -a0 -p ri1a -n < ../testout/fm27_ils.bin | tee ../testout/fm27_ri1a.bin | fmtocsv > ../testout/fm27_ri1a.csv
   	fmcalc -a2 -p ri1 -n < ../testout/fm27_ils.bin | tee ../testout/fm27_ri1.bin | fmtocsv > ../testout/fm27_ri1.csv
 	fmcalc -a2 -p ri2 -n < ../testout/fm27_ri1.bin | fmtocsv > ../testout/fm27.csv	
 	cd ../fm28
