@@ -109,6 +109,12 @@ main()
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm30.csv
 	cd ../fm31
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm31.csv
+	cd ../fm32
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm32.csv
+	cd ../fm33
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm33.csv
+	cd ../fm34
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm34.csv	
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 

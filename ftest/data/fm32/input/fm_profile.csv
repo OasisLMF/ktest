@@ -1,0 +1,2 @@
+profile_id,calcrule_id,deductible_1,deductible_2,deductible_3,attachment_1,limit_1,share_1,share_2,share_3
+1,2,50000,0,0,3000000,5000000,0.05,0,0
