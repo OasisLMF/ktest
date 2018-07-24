@@ -20,19 +20,29 @@ main()
 	fmcalc -a1 < ../testout/gul_c2.bin  > ../testout/fm2_c2.bin
 	# Run fm3
 	cd ../fm3
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm3.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm3_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm3_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm3_a2.csv
 	# Run fm4
 	cd ../fm4
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm4.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a2.csv
 	# Run fm5
 	cd ../fm5
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm5.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a2.csv
 	# Run fm6
 	cd ../fm6
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm6.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a2.csv
 	# Run fm7
 	cd ../fm7
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm7.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a2.csv
 	# Run fm8
 	cd ../fm8
 	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm8.csv
