@@ -45,10 +45,14 @@ main()
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a2.csv
 	# Run fm8
 	cd ../fm8
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm8.csv
-	# Run fm9
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a2.csv
+    # Run fm9
 	cd ../fm9
-	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm9.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a2.csv
 	# Run fm10
 	cd ../fm10
 	fmcalc < stream/gulitem.bin | fmtocsv -f > ../testout/fm10.csv
