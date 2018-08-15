@@ -151,6 +151,9 @@ main()
 	cd ../fm38
 	fmcalc -a2 -n -p ri_1_SEL_2 < ils.bin | fmtocsv -f > ../testout/fm38_2levels.csv
 	fmcalc -a2 -n -p ri_1_SEL_3 < ils.bin | fmtocsv -f > ../testout/fm38_3levels.csv
+  	cd ../fm39
+  	fmcalc -a2 -n -p ri_2_LOC_2 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_2levels.csv
+	fmcalc -a2 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_3levels.csv
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
