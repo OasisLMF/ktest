@@ -90,9 +90,11 @@ main()
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm16_a2.csv
 	# Run fm17
 	cd ../fm17
-	#fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17.csv
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a2.csv
 	# Run fm18
-	cd ../fm18
+	#cd ../fm18
 	#fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm18.csv
 	# Run fm19
 	cd ../fm19
@@ -100,7 +102,7 @@ main()
 	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm19_a1.csv
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm19_a2.csv
 	# Run fm20
-	cd ../fm20
+	#cd ../fm20
 	#fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm20.csv
 	# Run fm21
 	cd ../fm21
@@ -108,7 +110,7 @@ main()
 	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm21_a1.csv
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm21_a2.csv
 	# Run fm22
-	cd ../fm22
+	#cd ../fm22
 	#fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm22.csv
     # Run fm23
 	cd ../fm23
@@ -148,7 +150,9 @@ main()
 	cd ../fm34
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm34.csv	
 	cd ../fm35
-	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35.csv	
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a2.csv
 	cd ../fm36
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm36.csv
 	cd ../fm37
