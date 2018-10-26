@@ -43,6 +43,9 @@ cd ..
 cd d13
 eve 1 1 | getmodel -d | cdftocsv > ../testout/getmodel_$(basename "$PWD").csv
 cd ..
+cd d
+eve 1 1 | getmodel -d | cdftocsv > ../testout/getmodel_d.csv
+cd ..
 cd testout
 sha1sum -c ../$CTRL.sha1
 	 if [ "$?" -ne "0" ]; then
