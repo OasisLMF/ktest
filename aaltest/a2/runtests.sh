@@ -29,13 +29,13 @@ main()
 	
 	#md5sum -c ../$CTRL.md5
 
-	if [ "$?" -ne "0" ]; then
-	  echo "Sorry check failed\n"
+	#if [ "$?" -ne "0" ]; then
+	 # echo "Sorry check failed\n"
 	#  exit 1
-	else
-	  echo "Installer test passed.\n"
+	#else
+	 # echo "Installer test passed.\n"
 	# exit 0
-	fi
+	#fi
 	#rm *
 	cd ../..
 	# echo `pwd`
