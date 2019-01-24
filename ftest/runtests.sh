@@ -6,8 +6,8 @@ main()
 	CTRL=ctrl
 	# Run fm0
 	cd fm0
-	eve 1 2 | getmodel | gulcalc -r -S100 -i - > ../testout/gul_c1.bin
-	eve 2 2 | getmodel | gulcalc -r -S100 -i - > ../testout/gul_c2.bin
+	eve -n 1 2 | getmodel | gulcalc -r -S100 -i - > ../testout/gul_c1.bin
+	eve -n 2 2 | getmodel | gulcalc -r -S100 -i - > ../testout/gul_c2.bin
 	fmcalc < ../testout/gul_c1.bin | fmtocsv -f > ../testout/fm0_c1.csv
 	fmcalc < ../testout/gul_c2.bin | fmtocsv -f > ../testout/fm0_c2.csv
 	# Run fm1
@@ -166,6 +166,10 @@ main()
   	cd ../fm39
   	fmcalc -a2 -n -p ri_2_LOC_2 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_2levels.csv
 	fmcalc -a2 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_3levels.csv
+	cd ../fm40
+	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a0.csv
+	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a1.csv
+	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a2.csv	
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
