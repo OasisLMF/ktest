@@ -170,6 +170,11 @@ main()
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a0.csv
 	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a1.csv
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a2.csv	
+  	cd ../fm42
+	fmcalc -a 0 -n -p ri1 <  stream/ils.bin | fmtocsv | grep "^82904" > ../testout/fm42_a0.csv
+  	fmcalc -a 1 -n -p ri1 <  stream/ils.bin | fmtocsv | grep "^82904" > ../testout/fm42_a1.csv
+  	fmcalc -a 2 -n -p ri1 <  stream/ils.bin | fmtocsv | grep "^82904" > ../testout/fm42_a2.csv
+
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
