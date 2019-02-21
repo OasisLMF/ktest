@@ -1,0 +1,2 @@
+PortNumber,AccNumber,PolNumber,PolPerilsCovered,PolDedType6All,PolDed6All,PolMinDed6All,PolMaxDed6All,LayerParticipation,LayerLimit,LayerAttachment
+1,1,1,QQ1;WW1,2,0.15,100000,150000,0,0,0

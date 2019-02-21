@@ -130,12 +130,14 @@ main()
 	fmcalc -a2 -p ri2 -n < ../testout/fm24_ri1_a2.bin | tee ../testout/fm24_ri2_a2.bin | fmtocsv > ../testout/fm24_ri2_a2.csv
 	fmcalc -a2 -p ri3 -n < ../testout/fm24_ri2_a2.bin | tee ../testout/fm24_ri3_a2.bin | fmtocsv > ../testout/fm24_ri3_a2.csv
 	fmcalc -a2 -p ri4 -n < ../testout/fm24_ri3_a2.bin | tee ../testout/fm24_ri4_a2.bin | fmtocsv > ../testout/fm24_a2.csv
+	fmcalc -a0 -p ri4 -n < ../testout/fm24_ri3_a2.bin | fmtocsv > ../testout/fm24_a2_a0.csv
 	#allocule 1
 	fmcalc -a1 < stream/gulitem.bin | tee ../testout/fm24_ils_a1.bin | fmtocsv > ../testout/fm24_ils_a1.csv
   	fmcalc -a0 -p ri1 -n < ../testout/fm24_ils_a1.bin | tee ../testout/fm24_ri1_a1.bin | fmtocsv > ../testout/fm24_ri1_a1.csv
 	fmcalc -a1 -p ri2 -n < ../testout/fm24_ri1_a1.bin | tee ../testout/fm24_ri2_a1.bin | fmtocsv > ../testout/fm24_ri2_a1.csv
 	fmcalc -a1 -p ri3 -n < ../testout/fm24_ri2_a1.bin | tee ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_ri3_a1.csv
 	fmcalc -a1 -p ri4 -n < ../testout/fm24_ri3_a1.bin | tee ../testout/fm24_ri4_a1.bin | fmtocsv > ../testout/fm24_a1.csv
+	fmcalc -a0 -p ri4 -n < ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_a1_a0.csv
 	cd ../fm25
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv > ../testout/fm25.csv
 	cd ../fm26
