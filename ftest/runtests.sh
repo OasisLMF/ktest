@@ -188,9 +188,12 @@ main()
   	fmcalc -a 2 -n -p ri1 <  stream/ils.bin | fmtocsv | grep "^82904" > ../testout/fm42_a2.csv
 	cd ../fm43
 	fmcalc -a 0 < stream/gulitem.bin | fmtocsv > ../testout/fm43_a0.csv
-  	fmcalc -a 1 < stream/gulitem.bin | fmtocsv > ../testout/fm43_a1.csv
-  	fmcalc -a 2 < stream/gulitem.bin | fmtocsv > ../testout/fm43_a2.csv
-
+  	fmcalc -a 1 -p input_alloc < stream/gulitem.bin | fmtocsv > ../testout/fm43_a1.csv
+  	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv > ../testout/fm43_a2.csv
+	cd ../fm44
+	fmcalc -a 0 < stream/gulitem.bin | fmtocsv > ../testout/fm44_a0.csv
+  	fmcalc -a 1 -p input_alloc < stream/gulitem.bin | fmtocsv > ../testout/fm44_a1.csv
+  	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv > ../testout/fm44_a2.csv
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
