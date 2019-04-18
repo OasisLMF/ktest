@@ -26,33 +26,33 @@ main()
 	# Run fm4
 	cd ../fm4
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a2.csv
 	# Run fm5
 	cd ../fm5
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm5_a2.csv
 	# Run fm6
 	cd ../fm6
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm6_a2.csv
 	# Run fm7
 	cd ../fm7
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm7_a2.csv
 	# Run fm8
 	cd ../fm8
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm8_a2.csv
     # Run fm9
 	cd ../fm9
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm9_a2.csv
 	# Run fm10
 	cd ../fm10
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm10_a0.csv
@@ -61,8 +61,8 @@ main()
 	# Run fm11
 	cd ../fm11
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm11_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm11_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm11_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm11_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm11_a2.csv
 	# # Run fm12
 	cd ../fm12
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm12_a0.csv
@@ -71,28 +71,28 @@ main()
 	# Run fm13
 	cd ../fm13
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm13_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm13_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm13_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm13_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm13_a2.csv
 	# Run fm14
 	cd ../fm14
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm14_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm14_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm14_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm14_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm14_a2.csv
 	# Run fm15
 	cd ../fm15
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm15_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm15_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm15_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm15_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm15_a2.csv
 	# Run fm16
 	cd ../fm16
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm16_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm16_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm16_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm16_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm16_a2.csv
 	# Run fm17
 	cd ../fm17
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm17_a2.csv
 	# Run fm18
 	cd ../fm18
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm18_a0.csv
@@ -148,7 +148,7 @@ main()
 	fmcalc -a0 -p ri1a -n < ../testout/fm27_ils.bin | tee ../testout/fm27_ri1a.bin | fmtocsv > ../testout/fm27_ri1a.csv
   	fmcalc -a2 -p ri1b -n < ../testout/fm27_ri1a.bin | tee ../testout/fm27_ri1b.bin | fmtocsv > ../testout/fm27_ri1b.csv
   	#fmcalc -a2 -p ri1 -n < ../testout/fm27_ils.bin | tee ../testout/fm27_ri1.bin | fmtocsv > ../testout/fm27_ri1.csv
-	fmcalc -a2 -p ri2 -n < ../testout/fm27_ri1b.bin | fmtocsv > ../testout/fm27.csv	
+	fmcalc -a2 -p ri2_alloc -n < ../testout/fm27_ri1b.bin | fmtocsv > ../testout/fm27.csv	
 	cd ../fm28
 	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm28.csv
 	cd ../fm29
@@ -165,8 +165,8 @@ main()
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm34.csv	
 	cd ../fm35
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a0.csv
-	fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a1.csv
-	fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a2.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm35_a2.csv
 	cd ../fm36
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm36.csv
 	cd ../fm37
