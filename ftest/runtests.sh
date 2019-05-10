@@ -202,6 +202,14 @@ main()
 	#fmcalc -a 0 < stream/gulitem.bin | fmtocsv > ../testout/fm46_a0.csv
   	fmcalc -a 1 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm46_a1.csv
   	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm46_a2.csv
+  	cd ../fm47
+  	fmcalc -a 0 < stream/gulitem.bin | fmtocsv > ../testout/fm47_a0.csv
+  	fmcalc -a 1 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm47_a1.csv
+  	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm47_a2.csv
+  	cd ../fm48
+  	fmcalc -a 0 < stream/gulitem.bin | fmtocsv > ../testout/fm48_a0.csv
+  	fmcalc -a 1 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm48_a1.csv
+  	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm48_a2.csv
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
