@@ -24,9 +24,13 @@ main()
 	#  eve 1 1 | getmodel > testout/getmodelout.bin
 	
 	# test gulcalc item stream and coverage stream
-	eve 1 1 | getmodel | gulcalc -S100 -L0.1 -r -i - | gultocsv > testout/gulcalci.csv
-	# eve 1 1 | getmodel | gulcalc -S100 -L0.1 -r -c - | gultocsv > testout/gulcalcc.csv
-
+	eve 1 1 | getmodel | gulcalc -a1 -S10 -L0.1 -r -i - | gultocsv > testout/gulcalci_a1.csv
+	#eve 1 1 | getmodel | gulcalc -a2 -S10 -L0.1 -r -i - | gultocsv > testout/gulcalci_a2.csv
+	eve 1 1 | getmodel | gulcalc -a1 -S10 -L0.1 -r -i - | summarycalc -i -1 testout/summarycalc_S1_a1.bin -2 testout/summarycalc_S2_a1.bin -3 testout/summarycalc_S3_a1.bin
+	summarycalctocsv -e < testout/summarycalc_S1_a1.bin > testout/gulsummarycalc_S1_a1_e.csv
+	summarycalctocsv -e < testout/summarycalc_S2_a1.bin > testout/gulsummarycalc_S2_a1_e.csv
+	summarycalctocsv -e < testout/summarycalc_S3_a1.bin > testout/gulsummarycalc_S3_a1_e.csv
+	# eve 1 1 | getmodel | gulcalc -S10 -L0.1 -r -i - | summarycalc -i -1 - | summarycalctocsv > testout/summarycalc_S1.csv
 	# # test fmcalc
 	# fmcalc < testout/gulcalci.bin > testout/fmcalc.bin
 	
