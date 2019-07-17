@@ -9,7 +9,7 @@ main()
 	# and stderr (err) files
 	for filename in static/*.csv; do
 		base=$(basename -s .csv "$filename")
-		damagebintobin < static/$base.csv > testout/$base.bin 2>testout/$base.err
+		validatedamagebin < static/$base.csv 2>testout/$base.err
 	done
 
 	# Conduct MD5 checksum on generated files
