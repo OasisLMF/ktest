@@ -1,5 +1,6 @@
 # Generate damage_bin_dict csv files for testing validatedamagebin
 
+import numpy as np
 import pandas as pd
 import csv
 
@@ -30,6 +31,14 @@ def change_first_and_last_bin_limits(df):
     # Upper limit for last bin != 1
     df.iloc[-1, 1:4] = 0.999
     df.iloc[-2, 2] = 0.999
+
+    return df
+
+def insert_nans(df, locations):
+
+    # Missing data
+    for location in locations:
+        df.loc[location[0], location[1]] = np.nan
 
     return df
 
@@ -68,6 +77,12 @@ if __name__ == '__main__':
     df_bad_bin_limits = change_first_and_last_bin_limits(df_bad_bin_limits)
     df_bad_bin_limits.to_csv('../static/damage_bin_dict_badbinlim.csv', **kwargs)
 
+    # Missing data
+    df_missing_data = df.copy()
+    missing_data_locations = [ [4, '"bin_from"'], [44, '"bin_to"'] ]
+    df_missing_data = insert_nans(df_missing_data, missing_data_locations)
+    df_missing_data.to_csv('../static/damage_bin_dict_missingdata.csv', **kwargs)
+
     # Incorporate all aforementioned issues
     df_all_issues = df.copy()
     df_all_issues['"bin_index"'] += 1   # First bin index != 1
@@ -82,4 +97,7 @@ if __name__ == '__main__':
     )
     # Lower limit for first bin != 0 and upper limit for last bin != 1
     df_all_issues = change_first_and_last_bin_limits(df_all_issues)
+    # Insert invalid data
+    missing_data_locations_all_issues = [ [53, '"bin_from"'], [58, '"bin_to"'] ]
+    df_all_issues = insert_nans(df_all_issues, missing_data_locations_all_issues)
     df_all_issues.to_csv('../static/damage_bin_dict_allissues.csv', **kwargs)
