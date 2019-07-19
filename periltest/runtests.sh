@@ -11,7 +11,7 @@ main()
 	# Test subperil allocation method a1 - Sum and cap to TIV and back-allocate to items in proportion
 	eve 1 1 | getmodel | gulcalc -A1 -S10 -L0.1 -r -i - | gultocsv > testout/gulcalci_a1.csv
 
-	eve 1 1 | getmodel | gulcalc -A1 -S10 -L0.1 -r -i - | summarycalc -i -1 testout/summarycalc_S1_a1.bin -2 testout/summarycalc_S2_a1.bin -3 testout/summarycalc_S3_a1.bin
+	eve 1 1 | getmodel | gulcalc -A1 -S10 -L0.1 -r -i - | summarycalc -f -1 testout/summarycalc_S1_a1.bin -2 testout/summarycalc_S2_a1.bin -3 testout/summarycalc_S3_a1.bin
 	summarycalctocsv -e < testout/summarycalc_S1_a1.bin > testout/gulsummarycalc_S1_a1_e.csv
 	summarycalctocsv -e < testout/summarycalc_S2_a1.bin > testout/gulsummarycalc_S2_a1_e.csv
 	summarycalctocsv -e < testout/summarycalc_S3_a1.bin > testout/gulsummarycalc_S3_a1_e.csv
