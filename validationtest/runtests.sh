@@ -22,6 +22,9 @@ main()
 		base=$(basename -s .csv "$filename")
 		validatevulnerability < static/$base.csv 2>testout/$base.err
 	done
+	# Cross checks
+	crossvalidation -d damage_bin_dict.csv -f footprint.csv -s vulnerability.csv 2>testout/crossvalidation.err
+	crossvalidation -d damage_bin_dict_crosscheckfail.csv -f footprint.csv -s vulnerability_crosscheckfail.csv 2>testout/crossvalidation_crosscheckfail.err
 
 	# Conduct MD5 checksum on generated files
 	cd testout
