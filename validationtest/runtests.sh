@@ -17,6 +17,11 @@ main()
 		base=$(basename -s .csv "$filename")
 		validatefootprint < static/$base.csv 2>testout/$base.err
 	done
+	# Vulnerability
+	for filename in static/vulnerability*.csv; do
+		base=$(basename -s .csv "$filename")
+		validatevulnerability < static/$base.csv 2>testout/$base.err
+	done
 
 	# Conduct MD5 checksum on generated files
 	cd testout
