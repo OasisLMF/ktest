@@ -179,7 +179,7 @@ main()
 	fmcalc -a2 -n -p ri_1_SEL_3 < ils.bin | fmtocsv -f > ../testout/fm38_3levels.csv
   	cd ../fm39
   	fmcalc -a2 -n -p ri_2_LOC_2 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_2levels.csv
-	fmcalc -a2 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_3levels.csv
+	fmcalc -a3 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_3levels.csv #  alloc rule 3 = alloc rule 2 for multi-level layers
 	#cd ../fm40
 	#fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a0.csv
 	#fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a1.csv
