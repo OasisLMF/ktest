@@ -225,7 +225,7 @@ main()
   	fmcalc -a 1 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm52_a1.csv
   	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv  > ../testout/fm52_a2.csv
   	cd ../fm53
-  	fmcalc -a 0 < stream/gulitem.bin | fmtocsv > ../testout/fm53_a0.csv
+  	fmcalc -a 2 < stream/gulitem.bin | fmtocsv > ../testout/fm53_a2.csv
   	cd ../testout
 	md5sum -c ../$CTRL.md5
 
