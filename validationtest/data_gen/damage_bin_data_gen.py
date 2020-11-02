@@ -101,3 +101,17 @@ if __name__ == '__main__':
     missing_data_locations_all_issues = [ [53, '"bin_from"'], [58, '"bin_to"'] ]
     df_all_issues = insert_nans(df_all_issues, missing_data_locations_all_issues)
     df_all_issues.to_csv('../static/damage_bin_dict_allissues.csv', **kwargs)
+
+    # Remove deprecated interval_type column from all issues dataframe
+    df_all_issues = df_all_issues.drop(['"interval_type"'], axis=1)
+    df_all_issues.to_csv(
+        '../static/damage_bin_dict_allissues_newformat.csv', **kwargs
+    )
+
+    # Remove deprecated interval_type column from original, good file
+    df = df.drop(['"interval_type"'], axis=1)
+    df.to_csv('../static/damage_bin_dict_newformat.csv', **kwargs)
+
+    # Empty file
+    df = pd.DataFrame(columns = df.columns)
+    df.to_csv('../static/damage_bin_dict_empty.csv', **kwargs)
