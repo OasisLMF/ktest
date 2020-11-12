@@ -229,16 +229,22 @@ main()
   	fmcalc -a 2 -p input_alloc < stream/gulitem.bin | fmtocsv > ../testout/fm53_a2.csv
   	cd ../fm54
   	fmcalc -S < stream/gulitem.bin | fmtocsv > ../testout/fm54_a0.csv
+   	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm54_a0_2.csv
   	cd ../fm55
   	fmcalc -S < stream/gulitem.bin | fmtocsv > ../testout/fm55_a0.csv
+  	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm55_a0_2.csv
   	cd ../fm56
   	fmcalc -S < stream/gulitem.bin | fmtocsv > ../testout/fm56_a0.csv
+  	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm56_a0_2.csv
   	cd ../fm57
   	fmcalc -S < stream/gulitem.bin | fmtocsv > ../testout/fm57_a0.csv
+  	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm57_a0_2.csv
   	cd ../fm58
   	fmcalc -S < stream/gulitem.bin | fmtocsv > ../testout/fm58_a0.csv
+  	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm58_a0_2.csv
   	cd ../fm59
   	fmcalc -S < stream/gulitem.bin | fmtocsv > ../testout/fm59_a0.csv
+  	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm59_a0_2.csv
   	cd ../fm60
   	fmcalc -a0 < stream/gulitem.bin | fmtocsv > ../testout/fm60_a0.csv
   	cd ../testout
