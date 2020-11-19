@@ -1,4 +1,4 @@
-"from_agg_id","level_id","to_agg_id"
+from_agg_id,level_id,to_agg_id
 1, 1, 493
 2, 1, 7
 3, 1, 445
