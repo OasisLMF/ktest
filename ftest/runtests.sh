@@ -17,9 +17,18 @@ main()
 
 	# Run fm3
 	cd ../fm3
-	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm3_a0.csv
-	fmcalc -a1 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm3_a1.csv
-	fmcalc -a2 -p input_alloc < stream/gulitem.bin | fmtocsv -f > ../testout/fm3_a2.csv
+	#cpp
+	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm3_a0.csv
+	fmcalc -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm3_a1.csv
+	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm3_a2.csv
+	#python
+	fmpy -a0 --create-financial-structure-files -p input
+	fmpy -a1 --create-financial-structure-files -p input_alloc
+	fmpy -a2 --create-financial-structure-files -p input_alloc
+	fmpy -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm3_a0_py.csv
+	fmpy -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm3_a1_py.csv
+	fmpy -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm3_a2_py.csv
+	
 	# Run fm4
 	cd ../fm4
 	fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm4_a0.csv
