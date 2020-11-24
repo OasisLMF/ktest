@@ -2,6 +2,7 @@ installertest/work
 installertest/testout
 cw64bld
 ftest/testout
+ftest/testoutpy
 aaltest/a1/testout
 aaltest/a1/work
 disaggregation/testout
