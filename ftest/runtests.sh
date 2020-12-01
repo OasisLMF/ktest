@@ -6,8 +6,8 @@ main()
 	CTRL=ctrl
 	# Run fm0
 	cd fm0
-	eve -n 1 2 | getmodel | gulcalc -r -S100 -i - > ../testout/gul_c1.bin
-	eve -n 2 2 | getmodel | gulcalc -r -S100 -i - > ../testout/gul_c2.bin
+	eve -n 1 2 | getmodel | gulcalc -r -S100 -a0 -i - > ../testout/gul_c1.bin
+	eve -n 2 2 | getmodel | gulcalc -r -S100 -a0 -i - > ../testout/gul_c2.bin
 	fmcalc < ../testout/gul_c1.bin | fmtocsv -f > ../testout/fm0_c1.csv
 	fmcalc < ../testout/gul_c2.bin | fmtocsv -f > ../testout/fm0_c2.csv
 	fmcalc -a1 -p input_alloc < ../testout/gul_c1.bin  > ../testout/fm1_c1.bin
@@ -92,10 +92,10 @@ main()
 	fmcalc -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm17_a1.csv
 	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm17_a2.csv
 	# Run fm18
-	cd ../fm18
-	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm18_a0.csv
-	fmcalc -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm18_a1.csv
-	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm18_a2.csv
+	#cd ../fm18 - deprecate calcrule 21
+	#fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm18_a0.csv
+	#fmcalc -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm18_a1.csv
+	#fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm18_a2.csv
 	# Run fm19
 	cd ../fm19
 	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm19_a0.csv
@@ -140,11 +140,11 @@ main()
 	fmcalc -a1 -p ri4 -n < ../testout/fm24_ri3_a1.bin | tee ../testout/fm24_ri4_a1.bin | fmtocsv > ../testout/fm24_a1.csv
 	fmcalc -a0 -p ri4 -n < ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_a1_a0.csv
 	# Run fm25
-	cd ../fm25
-	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm25.csv
+	#cd ../fm25 - deprecate calcrule 4
+	#fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm25.csv
 	# Run fm26
-	cd ../fm26
-	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm26.csv	
+	#cd ../fm26 - deprecate calcrule 6
+	#fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm26.csv	
     # Run fm27
 	cd ../fm27
 	fmcalc -a0 < stream/gulitem.bin | tee ../testout/fm27_ils.bin | fmtocsv > ../testout/fm27_ils.csv
@@ -155,18 +155,18 @@ main()
 	# Run fm28
 	cd ../fm28
 	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm28.csv
-	cd ../fm29
-	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm29.csv
-	cd ../fm30
-	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm30.csv
-	cd ../fm31
-	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm31.csv
+	#cd ../fm29 - deprecate calcrule 6
+	#fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm29.csv
+	#cd ../fm30 - deprecate calcrule 6
+	#fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm30.csv
+	#cd ../fm31 - deprecate calcrule 6
+	#fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm31.csv
 	cd ../fm32
 	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm32.csv
 	cd ../fm33
 	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm33.csv
-	cd ../fm34
-	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm34.csv	
+	#cd ../fm34 - deprecate calcrule 18
+	#fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm34.csv	
 	cd ../fm35
 	fmcalc -a0 < stream/gulitem2.bin | fmtocsv -f > ../testout/fm35_a0.csv
 	fmcalc -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm35_a1.csv
