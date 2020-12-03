@@ -1,5 +1,0 @@
-profile_id,calcrule_id,deductible_1,deductible_2,deductible_3,attachment_1,limit_1,share_1,share_2,share_3
-1,2,0,0,0,350000,400000,1,0,0
-2,2,0,0,0,750000,9250000,1,0,0
-3,23,0,0,0,0,1200000,0,1,1
-4,23,0,0,0,0,18500000,0,1,1
