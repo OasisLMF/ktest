@@ -126,19 +126,22 @@ main()
     #Run fm24
 	cd ../fm24
 	#alloc rule 2
-	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | tee ../testout/fm24_ils_a2.bin | fmtocsv > ../testout/fm24_ils_a2.csv
-  	fmcalc -a0 -p ri1 -n < ../testout/fm24_ils_a2.bin | tee ../testout/fm24_ri1_a2.bin | fmtocsv > ../testout/fm24_ri1_a2.csv
-	fmcalc -a2 -p ri2 -n < ../testout/fm24_ri1_a2.bin | tee ../testout/fm24_ri2_a2.bin | fmtocsv > ../testout/fm24_ri2_a2.csv
-	fmcalc -a2 -p ri3 -n < ../testout/fm24_ri2_a2.bin | tee ../testout/fm24_ri3_a2.bin | fmtocsv > ../testout/fm24_ri3_a2.csv
-	fmcalc -a2 -p ri4 -n < ../testout/fm24_ri3_a2.bin | tee ../testout/fm24_ri4_a2.bin | fmtocsv > ../testout/fm24_a2.csv
-	fmcalc -a0 -p ri4 -n < ../testout/fm24_ri3_a2.bin | fmtocsv > ../testout/fm24_a2_a0.csv
+	# using files generated from oasislmf
+	gultobin -S1 -t2 < stream/gulitem2.csv > stream/gulitem2.bin
+	fmcalc -a2 -p input < stream/gulitem2.bin | tee ../testout/fm24_ils_a2.bin | fmtocsv > ../testout/fm24_ils_a2.csv
+  	fmcalc -a2 -p RI_1 -n < ../testout/fm24_ils_a2.bin | tee ../testout/fm24_ri1_a2.bin | fmtocsv > ../testout/fm24_ri1_a2.csv
+	fmcalc -a2 -p RI_2 -n < ../testout/fm24_ri1_a2.bin | tee ../testout/fm24_ri2_a2.bin | fmtocsv > ../testout/fm24_ri2_a2.csv
+	fmcalc -a2 -p RI_3 -n < ../testout/fm24_ri2_a2.bin | tee ../testout/fm24_ri3_a2.bin | fmtocsv > ../testout/fm24_ri3_a2.csv
+	fmcalc -a2 -p RI_4 -n < ../testout/fm24_ri3_a2.bin | tee ../testout/fm24_ri4_a2.bin | fmtocsv > ../testout/fm24_ri4_a2.csv
+
 	#allocule 1
-	fmcalc -a1 -p input_alloc < stream/gulitem2.bin | tee ../testout/fm24_ils_a1.bin | fmtocsv > ../testout/fm24_ils_a1.csv
-  	fmcalc -a0 -p ri1 -n < ../testout/fm24_ils_a1.bin | tee ../testout/fm24_ri1_a1.bin | fmtocsv > ../testout/fm24_ri1_a1.csv
-	fmcalc -a1 -p ri2 -n < ../testout/fm24_ri1_a1.bin | tee ../testout/fm24_ri2_a1.bin | fmtocsv > ../testout/fm24_ri2_a1.csv
-	fmcalc -a1 -p ri3 -n < ../testout/fm24_ri2_a1.bin | tee ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_ri3_a1.csv
-	fmcalc -a1 -p ri4 -n < ../testout/fm24_ri3_a1.bin | tee ../testout/fm24_ri4_a1.bin | fmtocsv > ../testout/fm24_a1.csv
-	fmcalc -a0 -p ri4 -n < ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_a1_a0.csv
+	# using files generated from oasislmf
+	fmcalc -a1 -p input < stream/gulitem2.bin | tee ../testout/fm24_ils_a1.bin | fmtocsv > ../testout/fm24_ils_a1.csv
+  	fmcalc -a1 -p RI_1 -n < ../testout/fm24_ils_a2.bin | tee ../testout/fm24_ri1_a1.bin | fmtocsv > ../testout/fm24_ri1_a1.csv
+	fmcalc -a1 -p RI_2 -n < ../testout/fm24_ri1_a2.bin | tee ../testout/fm24_ri2_a1.bin | fmtocsv > ../testout/fm24_ri2_a1.csv
+	fmcalc -a1 -p RI_3 -n < ../testout/fm24_ri2_a2.bin | tee ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_ri3_a1.csv
+	fmcalc -a1 -p RI_4 -n < ../testout/fm24_ri3_a2.bin | tee ../testout/fm24_ri4_a1.bin | fmtocsv > ../testout/fm24_ri4_a1.csv
+
 	# Run fm25
 	#cd ../fm25 - deprecate calcrule 4
 	#fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm25.csv
@@ -147,11 +150,21 @@ main()
 	#fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm26.csv	
     # Run fm27
 	cd ../fm27
-	fmcalc -a0 < stream/gulitem2.bin | tee ../testout/fm27_ils.bin | fmtocsv > ../testout/fm27_ils.csv
-	fmcalc -a0 -p ri1a -n < ../testout/fm27_ils.bin | tee ../testout/fm27_ri1a.bin | fmtocsv > ../testout/fm27_ri1a.csv
-  	fmcalc -a2 -p ri1b -n < ../testout/fm27_ri1a.bin | tee ../testout/fm27_ri1b.bin | fmtocsv > ../testout/fm27_ri1b.csv
-  	#fmcalc -a2 -p ri1 -n < ../testout/fm27_ils.bin | tee ../testout/fm27_ri1.bin | fmtocsv > ../testout/fm27_ri1.csv
-	fmcalc -a2 -p ri2_alloc -n < ../testout/fm27_ri1b.bin | fmtocsv > ../testout/fm27.csv	
+	#alloc rule 2
+	# using files generated from oasislmf
+	gultobin -S1 -t2 < stream/gulitem2.csv > stream/gulitem2.bin
+	fmcalc -a2 -p input < stream/gulitem2.bin | tee ../testout/fm27_ils_a2.bin | fmtocsv > ../testout/fm27_ils_a2.csv
+  	fmcalc -a2 -p RI_1 -n < ../testout/fm27_ils_a2.bin | tee ../testout/fm27_ri1_a2.bin | fmtocsv > ../testout/fm27_ri1_a2.csv
+	fmcalc -a2 -p RI_2 -n < ../testout/fm27_ri1_a2.bin | tee ../testout/fm27_ri2_a2.bin | fmtocsv > ../testout/fm27_ri2_a2.csv
+	fmcalc -a2 -p RI_3 -n < ../testout/fm27_ri2_a2.bin | tee ../testout/fm27_ri3_a2.bin | fmtocsv > ../testout/fm27_ri3_a2.csv	
+	#alloc rule 1
+	# using files generated from oasislmf
+	# gultobin -S1 -t2 < stream/raw_guls.csv > stream/raw_guls.bin
+	# fmcalc -a1 -p input < stream/raw_guls.bin | tee ../testout/fm27_ils_a1.bin | fmtocsv > ../testout/fm27_ils_a1.csv
+ #  	fmcalc -a1 -p RI_1 -n < ../testout/fm27_ils_a1.bin | tee ../testout/fm27_ri1_a1.bin | fmtocsv > ../testout/fm27_ri1_a1.csv
+	# fmcalc -a1 -p RI_2 -n < ../testout/fm27_ri1_a1.bin | tee ../testout/fm27_ri2_a1.bin | fmtocsv > ../testout/fm27_ri2_a1.csv
+	# fmcalc -a1 -p RI_3 -n < ../testout/fm27_ri2_a1.bin | tee ../testout/fm27_ri3_a1.bin | fmtocsv > ../testout/fm27_ri3_a1.csv	
+
 	# Run fm28
 	cd ../fm28
 	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testout/fm28.csv
