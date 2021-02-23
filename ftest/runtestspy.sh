@@ -194,44 +194,54 @@ main()
     
     #Run fm24
     echo "fm24 to do"
-	# cd ../fm24
-	# #alloc rule 2
-	# fmpy -a2 --create-financial-structure-files -p input_alloc
-	# fmpy -a1 --create-financial-structure-files -p input_alloc
-	# fmpy -a0 --create-financial-structure-files -p ri1
-	# fmpy -a2 --create-financial-structure-files -p ri2
-	# fmpy -a2 --create-financial-structure-files -p ri3
-	# fmpy -a2 --create-financial-structure-files -p ri4
-	# fmpy -a1 --create-financial-structure-files -p ri2
-	# fmpy -a1 --create-financial-structure-files -p ri3
-	# fmpy -a1 --create-financial-structure-files -p ri4
-	# fmpy -a0 --create-financial-structure-files -p ri4
-	# fmpy -a2 -p input_alloc < stream/gulitem2.bin | tee ../testoutpy/fm24_ils_a2.bin | fmtocsv > ../testoutpy/fm24_ils_a2.csv
- #  	fmpy -a0 -p ri1 -n < ../testoutpy/fm24_ils_a2.bin | tee ../testoutpy/fm24_ri1_a2.bin | fmtocsv > ../testoutpy/fm24_ri1_a2.csv
-	# fmpy -a2 -p ri2 -n < ../testoutpy/fm24_ri1_a2.bin | tee ../testoutpy/fm24_ri2_a2.bin | fmtocsv > ../testoutpy/fm24_ri2_a2.csv
-	# fmpy -a2 -p ri3 -n < ../testoutpy/fm24_ri2_a2.bin | tee ../testoutpy/fm24_ri3_a2.bin | fmtocsv > ../testoutpy/fm24_ri3_a2.csv
-	# fmpy -a2 -p ri4 -n < ../testoutpy/fm24_ri3_a2.bin | tee ../testoutpy/fm24_ri4_a2.bin | fmtocsv > ../testoutpy/fm24_a2.csv
-	# fmpy -a0 -p ri4 -n < ../testoutpy/fm24_ri3_a2.bin | fmtocsv > ../testoutpy/fm24_a2_a0.csv
-	# #allocule 1
-	# fmpy -a1 -p input_alloc < stream/gulitem2.bin | tee ../testoutpy/fm24_ils_a1.bin | fmtocsv > ../testoutpy/fm24_ils_a1.csv
- #  	fmpy -a0 -p ri1 -n < ../testoutpy/fm24_ils_a1.bin | tee ../testoutpy/fm24_ri1_a1.bin | fmtocsv > ../testoutpy/fm24_ri1_a1.csv
-	# fmpy -a1 -p ri2 -n < ../testoutpy/fm24_ri1_a1.bin | tee ../testoutpy/fm24_ri2_a1.bin | fmtocsv > ../testoutpy/fm24_ri2_a1.csv
-	# fmpy -a1 -p ri3 -n < ../testoutpy/fm24_ri2_a1.bin | tee ../testoutpy/fm24_ri3_a1.bin | fmtocsv > ../testoutpy/fm24_ri3_a1.csv
-	# fmpy -a1 -p ri4 -n < ../testoutpy/fm24_ri3_a1.bin | tee ../testoutpy/fm24_ri4_a1.bin | fmtocsv > ../testoutpy/fm24_a1.csv
-	# fmpy -a0 -p ri4 -n < ../testoutpy/fm24_ri3_a1.bin | fmtocsv > ../testoutpy/fm24_a1_a0.csv
+	cd ../fm24
+	fmpy -a2 --create-financial-structure-files -p input
+	fmpy -a1 --create-financial-structure-files -p input
+	fmpy -a2 --create-financial-structure-files -p RI_1
+	fmpy -a1 --create-financial-structure-files -p RI_1
+	fmpy -a2 --create-financial-structure-files -p RI_2
+	fmpy -a1 --create-financial-structure-files -p RI_2
+	fmpy -a2 --create-financial-structure-files -p RI_3
+	fmpy -a1 --create-financial-structure-files -p RI_3
+	fmpy -a2 --create-financial-structure-files -p RI_4
+	fmpy -a1 --create-financial-structure-files -p RI_4
+	#alloc rule 2
+	# using files generated from oasislmf
+	gultobin -S1 -t2 < stream/gulitem2.csv > stream/gulitem2.bin
+	fmpy -a2 -p input < stream/gulitem2.bin | tee ../testoutpy/fm24_ils_a2.bin | fmtocsv > ../testoutpy/fm24_ils_a2.csv
+  	fmpy -a2 -p RI_1 -n < ../testoutpy/fm24_ils_a2.bin | tee ../testoutpy/fm24_ri1_a2.bin | fmtocsv > ../testoutpy/fm24_ri1_a2.csv
+	fmpy -a2 -p RI_2 -n < ../testoutpy/fm24_ri1_a2.bin | tee ../testoutpy/fm24_ri2_a2.bin | fmtocsv > ../testoutpy/fm24_ri2_a2.csv
+	fmpy -a2 -p RI_3 -n < ../testoutpy/fm24_ri2_a2.bin | tee ../testoutpy/fm24_ri3_a2.bin | fmtocsv > ../testoutpy/fm24_ri3_a2.csv
+	fmpy -a2 -p RI_4 -n < ../testoutpy/fm24_ri3_a2.bin | tee ../testoutpy/fm24_ri4_a2.bin | fmtocsv > ../testoutpy/fm24_ri4_a2.csv
+
+	#allocule 1
+	# using files generated from oasislmf
+	fmpy -a1 -p input < stream/gulitem2.bin | tee ../testoutpy/fm24_ils_a1.bin | fmtocsv > ../testoutpy/fm24_ils_a1.csv
+  	fmpy -a1 -p RI_1 -n < ../testoutpy/fm24_ils_a1.bin | tee ../testoutpy/fm24_ri1_a1.bin | fmtocsv > ../testoutpy/fm24_ri1_a1.csv
+	fmpy -a1 -p RI_2 -n < ../testoutpy/fm24_ri1_a1.bin | tee ../testoutpy/fm24_ri2_a1.bin | fmtocsv > ../testoutpy/fm24_ri2_a1.csv
+	fmpy -a1 -p RI_3 -n < ../testoutpy/fm24_ri2_a1.bin | tee ../testoutpy/fm24_ri3_a1.bin | fmtocsv > ../testoutpy/fm24_ri3_a1.csv
+	fmpy -a1 -p RI_4 -n < ../testoutpy/fm24_ri3_a1.bin | tee ../testoutpy/fm24_ri4_a1.bin | fmtocsv > ../testoutpy/fm24_ri4_a1.csv
 	# Run fm25
 	#cd ../fm25 - deprecate calcrule 4
 	#fmpy -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm25.csv
 	# Run fm26
 	#cd ../fm26 - deprecate calcrule 6
 	#fmpy -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm26.csv	
+	
     # Run fm27
-    echo "fm27 to do"
-	# cd ../fm27
-	# fmpy -a0 --create-financial-structure-files -p input
-	# fmpy -a0 --create-financial-structure-files -p ri1a
-	# fmpy -a2 --create-financial-structure-files -p ri1b
-	# fmpy -a2 --create-financial-structure-files -p ri2_alloc
+	cd ../fm27
+	fmpy -a2 --create-financial-structure-files -p input
+	fmpy -a2 --create-financial-structure-files -p RI_1
+	fmpy -a2 --create-financial-structure-files -p RI_2
+	fmpy -a2 --create-financial-structure-files -p RI_3
+
+	#alloc rule 2
+	# using files generated from oasislmf
+	gultobin -S1 -t2 < stream/gulitem2.csv > stream/gulitem2.bin
+	fmcalc -a2 -p input < stream/gulitem2.bin | tee ../testoutpy/fm27_ils_a2.bin | fmtocsv > ../testoutpy/fm27_ils_a2.csv
+  	fmcalc -a2 -p RI_1 -n < ../testoutpy/fm27_ils_a2.bin | tee ../testoutpy/fm27_ri1_a2.bin | fmtocsv > ../testoutpy/fm27_ri1_a2.csv
+	fmcalc -a2 -p RI_2 -n < ../testoutpy/fm27_ri1_a2.bin | tee ../testoutpy/fm27_ri2_a2.bin | fmtocsv > ../testoutpy/fm27_ri2_a2.csv
+	fmcalc -a2 -p RI_3 -n < ../testoutpy/fm27_ri2_a2.bin | tee ../testoutpy/fm27_ri3_a2.bin | fmtocsv > ../testoutpy/fm27_ri3_a2.csv
 	# fmpy -a0 < stream/gulitem2.bin | tee ../testoutpy/fm27_ils.bin | fmtocsv > ../testoutpy/fm27_ils.csv
 	# fmpy -a0 -p ri1a -n < ../testoutpy/fm27_ils.bin | tee ../testoutpy/fm27_ri1a.bin | fmtocsv > ../testoutpy/fm27_ri1a.csv
  #  	fmpy -a2 -p ri1b -n < ../testoutpy/fm27_ri1a.bin | tee ../testoutpy/fm27_ri1b.bin | fmtocsv > ../testoutpy/fm27_ri1b.csv

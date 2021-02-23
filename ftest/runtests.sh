@@ -137,10 +137,10 @@ main()
 	#allocule 1
 	# using files generated from oasislmf
 	fmcalc -a1 -p input < stream/gulitem2.bin | tee ../testout/fm24_ils_a1.bin | fmtocsv > ../testout/fm24_ils_a1.csv
-  	fmcalc -a1 -p RI_1 -n < ../testout/fm24_ils_a2.bin | tee ../testout/fm24_ri1_a1.bin | fmtocsv > ../testout/fm24_ri1_a1.csv
-	fmcalc -a1 -p RI_2 -n < ../testout/fm24_ri1_a2.bin | tee ../testout/fm24_ri2_a1.bin | fmtocsv > ../testout/fm24_ri2_a1.csv
-	fmcalc -a1 -p RI_3 -n < ../testout/fm24_ri2_a2.bin | tee ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_ri3_a1.csv
-	fmcalc -a1 -p RI_4 -n < ../testout/fm24_ri3_a2.bin | tee ../testout/fm24_ri4_a1.bin | fmtocsv > ../testout/fm24_ri4_a1.csv
+  	fmcalc -a1 -p RI_1 -n < ../testout/fm24_ils_a1.bin | tee ../testout/fm24_ri1_a1.bin | fmtocsv > ../testout/fm24_ri1_a1.csv
+	fmcalc -a1 -p RI_2 -n < ../testout/fm24_ri1_a1.bin | tee ../testout/fm24_ri2_a1.bin | fmtocsv > ../testout/fm24_ri2_a1.csv
+	fmcalc -a1 -p RI_3 -n < ../testout/fm24_ri2_a1.bin | tee ../testout/fm24_ri3_a1.bin | fmtocsv > ../testout/fm24_ri3_a1.csv
+	fmcalc -a1 -p RI_4 -n < ../testout/fm24_ri3_a1.bin | tee ../testout/fm24_ri4_a1.bin | fmtocsv > ../testout/fm24_ri4_a1.csv
 
 	# Run fm25
 	#cd ../fm25 - deprecate calcrule 4
