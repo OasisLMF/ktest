@@ -177,23 +177,22 @@ main()
 	fmpy -a1 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testoutpy/fm21_a1.csv
 	fmpy -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testoutpy/fm21_a2.csv	
 
-	echo "fm23 to do"
-	# cd ../fm23
-	# fmpy -a1 --create-financial-structure-files -p input_alloc
-	# fmpy -a2 --create-financial-structure-files -p input_alloc
-	# fmpy -a1 --create-financial-structure-files -p ri1
-	# fmpy -a2 --create-financial-structure-files -p ri1
-	# fmpy -a1 --create-financial-structure-files -p ri2
-	# fmpy -a2 --create-financial-structure-files -p ri2	
-	# fmpy -a1 -p input_alloc < stream/gulitem2.bin | tee ../testoutpy/fm23_ils_a1.bin | fmtocsv > ../testoutpy/fm23_ils_a1.csv
- #  	fmpy -a1 -p ri1 -n < ../testoutpy/fm23_ils_a1.bin | tee ../testoutpy/fm23_ri1_a1.bin | fmtocsv > ../testoutpy/fm23_ri1_a1.csv
-	# fmpy -a1 -p ri2 -n < ../testoutpy/fm23_ri1_a1.bin | fmtocsv > ../testoutpy/fm23_ri2_a1.csv
-	# fmpy -a2 -p input_alloc < stream/gulitem.bin | tee ../testoutpy/fm23_ils_a2.bin | fmtocsv > ../testoutpy/fm23_ils_a2.csv
- #  	fmpy -a2 -p ri1 -n < ../testoutpy/fm23_ils_a2.bin | tee ../testoutpy/fm23_ri1_a2.bin | fmtocsv > ../testoutpy/fm23_ri1_a2.csv
-	# fmpy -a2 -p ri2 -n < ../testoutpy/fm23_ri1_a2.bin | fmtocsv > ../testoutpy/fm23_ri2_a2.csv
+    #Run fm23
+	cd ../fm23
+	fmpy -a1 --create-financial-structure-files -p input_alloc
+	fmpy -a2 --create-financial-structure-files -p input_alloc
+	fmpy -a1 --create-financial-structure-files -p ri1
+	fmpy -a2 --create-financial-structure-files -p ri1
+	fmpy -a1 --create-financial-structure-files -p ri2
+	fmpy -a2 --create-financial-structure-files -p ri2	
+	fmpy -a1 -p input_alloc < stream/gulitem2.bin | tee ../testoutpy/fm23_ils_a1.bin | fmtocsv > ../testoutpy/fm23_ils_a1.csv
+  	fmpy -a1 -p ri1 -n < ../testoutpy/fm23_ils_a1.bin | tee ../testoutpy/fm23_ri1_a1.bin | fmtocsv > ../testoutpy/fm23_ri1_a1.csv
+	fmpy -a1 -p ri2 -n < ../testoutpy/fm23_ri1_a1.bin | fmtocsv > ../testoutpy/fm23_ri2_a1.csv
+	fmpy -a2 -p input_alloc < stream/gulitem2.bin | tee ../testoutpy/fm23_ils_a2.bin | fmtocsv > ../testoutpy/fm23_ils_a2.csv
+  	fmpy -a2 -p ri1 -n < ../testoutpy/fm23_ils_a2.bin | tee ../testoutpy/fm23_ri1_a2.bin | fmtocsv > ../testoutpy/fm23_ri1_a2.csv
+	fmpy -a2 -p ri2 -n < ../testoutpy/fm23_ri1_a2.bin | fmtocsv > ../testoutpy/fm23_ri2_a2.csv
     
     #Run fm24
-    echo "fm24 to do"
 	cd ../fm24
 	fmpy -a2 --create-financial-structure-files -p input
 	fmpy -a1 --create-financial-structure-files -p input
@@ -242,15 +241,11 @@ main()
   	fmcalc -a2 -p RI_1 -n < ../testoutpy/fm27_ils_a2.bin | tee ../testoutpy/fm27_ri1_a2.bin | fmtocsv > ../testoutpy/fm27_ri1_a2.csv
 	fmcalc -a2 -p RI_2 -n < ../testoutpy/fm27_ri1_a2.bin | tee ../testoutpy/fm27_ri2_a2.bin | fmtocsv > ../testoutpy/fm27_ri2_a2.csv
 	fmcalc -a2 -p RI_3 -n < ../testoutpy/fm27_ri2_a2.bin | tee ../testoutpy/fm27_ri3_a2.bin | fmtocsv > ../testoutpy/fm27_ri3_a2.csv
-	# fmpy -a0 < stream/gulitem2.bin | tee ../testoutpy/fm27_ils.bin | fmtocsv > ../testoutpy/fm27_ils.csv
-	# fmpy -a0 -p ri1a -n < ../testoutpy/fm27_ils.bin | tee ../testoutpy/fm27_ri1a.bin | fmtocsv > ../testoutpy/fm27_ri1a.csv
- #  	fmpy -a2 -p ri1b -n < ../testoutpy/fm27_ri1a.bin | tee ../testoutpy/fm27_ri1b.bin | fmtocsv > ../testoutpy/fm27_ri1b.csv
- #  	#fmpy -a2 -p ri1 -n < ../testoutpy/fm27_ils.bin | tee ../testoutpy/fm27_ri1.bin | fmtocsv > ../testoutpy/fm27_ri1.csv
-	# fmpy -a2 -p ri2_alloc -n < ../testoutpy/fm27_ri1b.bin | fmtocsv > ../testoutpy/fm27.csv	
+	
 	# # Run fm28
 	cd ../fm28
 	fmpy -a2 --create-financial-structure-files -p input_alloc
-	fmpy -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv -f > ../testoutpy/fm28.csv
+	fmpy -a2 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv -f > ../testoutpy/fm28.csv
 	cd ../fm29 # deprecate calcrule 6
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a0 < stream/gulitem2.bin | fmtocsv -f > ../testoutpy/fm29.csv
@@ -279,25 +274,23 @@ main()
 	cd ../fm36
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a0 < stream/gulitem2.bin | fmtocsv -f > ../testoutpy/fm36.csv
-	echo "fm37 to do"
-	# cd ../fm37
-	# fmpy -a0 --create-financial-structure-files -p input
-	# fmpy -a2 --create-financial-structure-files -p ri1
-	# fmpy -a0 < stream/gulitem2.bin | tee ../testoutpy/fm37_ils.bin | fmtocsv -f > ../testoutpy/fm37_ils.csv
-	# fmpy -a2 -p ri1 -n < ../testoutpy/fm37_ils.bin | fmtocsv > ../testoutpy/fm37.csv
-
+	cd ../fm37
+	fmpy -a0 --create-financial-structure-files -p input
+	fmpy -a2 --create-financial-structure-files -p ri1
+	fmpy -a0 < stream/gulitem2.bin | tee ../testoutpy/fm37_ils.bin | fmtocsv -f > ../testoutpy/fm37_ils.csv
+	fmpy -a2 -p ri1 -n < ../testoutpy/fm37_ils.bin | fmtocsv > ../testoutpy/fm37.csv
 	cd ../fm38
 	fmpy -a2 --create-financial-structure-files -p ri_1_SEL_2
 	fmpy -a2 --create-financial-structure-files -p ri_1_SEL_3
 	fmpy -a2 -n -p ri_1_SEL_2 < ils.bin | fmtocsv -f > ../testoutpy/fm38_2levels.csv
 	fmpy -a2 -n -p ri_1_SEL_3 < ils.bin | fmtocsv -f > ../testoutpy/fm38_3levels.csv
-	echo "fm39 to do"
- #  	cd ../fm39
-	# fmpy -a2 --create-financial-structure-files -p ri_2_LOC_2
-	# fmpy -a3 --create-financial-structure-files -p ri_2_LOC_3  	
- #  	fmpy -a2 -n -p ri_2_LOC_2 < stream/ri_1_ACC.bin | fmtocsv -f > ../testoutpy/fm39_2levels.csv
-	# fmpy -a3 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testoutpy/fm39_3levels.csv #  alloc rule 3 = alloc rule 2 for multi-level layers
+  	cd ../fm39
+	fmpy -a2 --create-financial-structure-files -p ri_2_LOC_2
+	fmpy -a3 --create-financial-structure-files -p ri_2_LOC_3  	
+ 	fmpy -a2 -n -p ri_2_LOC_2 < stream/ri_1_ACC.bin | fmtocsv -f > ../testoutpy/fm39_2levels.csv
+	fmpy -a3 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testoutpy/fm39_3levels.csv #  alloc rule 3 = alloc rule 2 for multi-level layers
 	# #cd ../fm40
+	# covered in mdk
 	#fmpy -a0 < stream/gulitem.bin | fmtocsv -f > ../testoutpy/fm40_a0.csv
 	#fmpy -a1 < stream/gulitem.bin | fmtocsv -f > ../testoutpy/fm40_a1.csv
 	#fmpy -a2 < stream/gulitem.bin | fmtocsv -f > ../testoutpy/fm40_a2.csv	
@@ -312,16 +305,16 @@ main()
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a1 --create-financial-structure-files -p input_alloc
 	fmpy -a2 --create-financial-structure-files -p input_alloc
-	fmpy -a 0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm43_a0.csv
-  	fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm43_a1.csv
-  	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm43_a2.csv
+	fmpy -a 0 --sort-output < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm43_a0.csv
+  	fmpy -a 1 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm43_a1.csv
+  	fmpy -a 2 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm43_a2.csv
 	cd ../fm44
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a1 --create-financial-structure-files -p input_alloc
 	fmpy -a2 --create-financial-structure-files -p input_alloc
-	fmpy -a 0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm44_a0.csv
-  	fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm44_a1.csv
-  	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm44_a2.csv
+	fmpy -a 0 --sort-output < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm44_a0.csv
+  	fmpy -a 1 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm44_a1.csv
+  	fmpy -a 2 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm44_a2.csv
   	cd ../fm45
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a1 --create-financial-structure-files -p input_alloc
@@ -334,8 +327,8 @@ main()
 	fmpy -a1 --create-financial-structure-files -p input_alloc
 	fmpy -a2 --create-financial-structure-files -p input_alloc
 	#fmpy -a 0 < stream/gulitem.bin | fmtocsv > ../testoutpy/fm46_a0.csv
-  	fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm46_a1.csv
-  	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm46_a2.csv
+  	fmpy -a 1 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm46_a1.csv
+  	fmpy -a 2 --sort-output -p input_alloc  < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm46_a2.csv
   	cd ../fm47
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a1 --create-financial-structure-files -p input_alloc
@@ -352,13 +345,13 @@ main()
   	fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm48_a1.csv
   	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm48_a2.csv
 	echo "fm49 to do"
-	# cd ../fm49
-	# fmpy -a0 --create-financial-structure-files -p input
-	# fmpy -a1 --create-financial-structure-files -p input_alloc
-	# fmpy -a2 --create-financial-structure-files -p input_alloc
-  	# fmpy -a 0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm49_a0.csv
-  	# fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm49_a1.csv
-  	# fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm49_a2.csv
+	cd ../fm49
+	fmpy -a0 --create-financial-structure-files -p input
+	fmpy -a1 --create-financial-structure-files -p input_alloc
+	fmpy -a2 --create-financial-structure-files -p input_alloc
+  	fmpy -a 0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm49_a0.csv
+  	fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm49_a1.csv
+  	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm49_a2.csv
 	cd ../fm51
 	fmpy -a0 --create-financial-structure-files -p input
 	fmpy -a1 --create-financial-structure-files -p input_alloc
@@ -372,13 +365,13 @@ main()
 	fmpy -a1 --create-financial-structure-files -p input_alloc
 	fmpy -a2 --create-financial-structure-files -p input_alloc
 
-  	fmpy -a 0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm52_a0.csv
-  	fmpy -a 1 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm52_a1.csv
-  	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm52_a2.csv
+  	fmpy -a 0 --sort-output < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm52_a0.csv
+  	fmpy -a 1 --sort-output -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm52_a1.csv
+  	fmpy -a 2 --sort-output -p input_alloc < stream/gulitem2.bin | fmtocsv  > ../testoutpy/fm52_a2.csv
 
   	cd ../fm53
 	fmpy -a2 --create-financial-structure-files -p input_alloc
-  	fmpy -a 2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm53_a2.csv
+  	fmpy -a 2 --sort-output -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm53_a2.csv
   	cd ../fm54
 	fmpy -a0 --create-financial-structure-files -p input
   	# fmpy -S < stream/gulitem.bin | fmtocsv > ../testoutpy/fm54_a0.csv

@@ -196,6 +196,7 @@ main()
   	fmcalc -a2 -n -p ri_2_LOC_2 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_2levels.csv
 	fmcalc -a3 -n -p ri_2_LOC_3 < stream/ri_1_ACC.bin | fmtocsv -f > ../testout/fm39_3levels.csv #  alloc rule 3 = alloc rule 2 for multi-level layers
 	#cd ../fm40
+	# covered in mdk
 	#fmcalc -a0 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a0.csv
 	#fmcalc -a1 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a1.csv
 	#fmcalc -a2 < stream/gulitem.bin | fmtocsv -f > ../testout/fm40_a2.csv	
