@@ -401,6 +401,10 @@ main()
   	fmpy -a0 --create-financial-structure-files -p input
   	fmpy -a0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm60_a0.csv
 
+  	cd ../fm61
+  	fmpy -a0 --create-financial-structure-files -p input
+  	fmpy -a0 < stream/gulitem2.bin | fmtocsv > ../testoutpy/fm61_a0.csv
+
   	cd ../testoutpy
 	md5sum -c ../$CTRL.md5
 

@@ -262,7 +262,10 @@ main()
   	fmcalc -S < stream/gulitem2.bin | fmtocsv > ../testout/fm59_a0_2.csv
   	cd ../fm60
   	fmcalc -a0 < stream/gulitem2.bin | fmtocsv > ../testout/fm60_a0.csv
-  	cd ../testout
+  	cd ../fm61
+  	fmcalc -a0 < stream/gulitem2.bin | fmtocsv > ../testout/fm61_a0.csv
+	
+	cd ../testout
 	md5sum -c ../$CTRL.md5
 
 	if [ "$?" -ne "0" ]; then
