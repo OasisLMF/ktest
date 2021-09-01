@@ -267,6 +267,12 @@ main()
   	cd ../fm62
   	fmcalc -a2 < stream/gulitem2.bin | fmtocsv > ../testout/fm62_a2.csv
 	
+	cd ../fm63
+	# Fails as new a2 prior level logic for max deductibles not implemented. oasislmf#803
+	fmcalc -a0 < stream/gulitem2.bin | fmtocsv > ../testout/fm63_a0.csv
+  	fmcalc -a1 -p input_alloc< stream/gulitem2.bin | fmtocsv > ../testout/fm63_a1.csv
+  	fmcalc -a2 -p input_alloc < stream/gulitem2.bin | fmtocsv > ../testout/fm63_a2.csv
+
 	cd ../testout
 	md5sum -c ../$CTRL.md5
 
